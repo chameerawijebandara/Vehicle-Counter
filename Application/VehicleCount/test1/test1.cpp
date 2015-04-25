@@ -112,7 +112,7 @@ int main(int argc, char* argv[])
 
 	namedWindow("Background Substracted",WINDOW_NORMAL);
 	ofstream myfile;
-	 myfile.open ("C:\\Users\\Rp-PC\\Desktop\\Project Traffic count\\Note\\negative_smooth_movingAVG2.txt");
+	// myfile.open ("C:\\Users\\Rp-PC\\Desktop\\Project Traffic count\\Note\\negative_smooth_movingAVG2.txt");
 	int count;
 	count=0;
 	
