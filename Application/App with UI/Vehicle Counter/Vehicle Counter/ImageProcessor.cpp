@@ -152,6 +152,7 @@ void ImageProcessor::Start()
 		if (image.empty())
 		{
 			cout << "\n**********END OF VIDEO*********";
+			cvDestroyWindow("Video");
 			return ;
 		}
 		temp = image.clone();
@@ -170,9 +171,6 @@ void ImageProcessor::Start()
 			sprintf(String_to_show, "%d", Lane + 1);
 			putText(temp, String_to_show, Point(x_cord[Lane] + w[Lane] / 2 - 17, y_cord[Lane] + h[Lane] / 2 + 20), FONT_HERSHEY_SIMPLEX, 1.5, Scalar(255, 0, 0), 4, 8, false);
 			/***********************************************************/
-
-
-
 		}
 
 		cout << '\n';
@@ -215,7 +213,7 @@ void ImageProcessor::Start()
 			flag = false;
 	}
 	isVideoRun = false;
-	
+	cvDestroyWindow("Video");
 	return;
 }
 
