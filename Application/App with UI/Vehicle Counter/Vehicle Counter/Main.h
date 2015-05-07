@@ -60,6 +60,7 @@ namespace VehicleCounter {
 	private: System::Windows::Forms::Button^  button4;
 	private: System::Windows::Forms::Label^  label7;
 	private: System::Windows::Forms::TextBox^  textBox3;
+	private: System::Windows::Forms::Button^  button5;
 
 
 
@@ -76,6 +77,7 @@ namespace VehicleCounter {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Main::typeid));
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -96,10 +98,11 @@ namespace VehicleCounter {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->BeginInit();
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown4))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// openFileDialog1
@@ -109,40 +112,45 @@ namespace VehicleCounter {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(22, 25);
+			this->label1->Location = System::Drawing::Point(26, 111);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(75, 20);
+			this->label1->Size = System::Drawing::Size(50, 13);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Input File";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(22, 78);
+			this->label2->Location = System::Drawing::Point(26, 146);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(87, 20);
+			this->label2->Size = System::Drawing::Size(58, 13);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Output File";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(140, 22);
+			this->textBox1->Location = System::Drawing::Point(104, 109);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(464, 26);
+			this->textBox1->Size = System::Drawing::Size(311, 20);
 			this->textBox1->TabIndex = 2;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(140, 75);
+			this->textBox2->Location = System::Drawing::Point(104, 144);
+			this->textBox2->Margin = System::Windows::Forms::Padding(2);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(464, 26);
+			this->textBox2->Size = System::Drawing::Size(311, 20);
 			this->textBox2->TabIndex = 3;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(659, 17);
+			this->button1->Location = System::Drawing::Point(450, 106);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(99, 36);
+			this->button1->Size = System::Drawing::Size(66, 23);
 			this->button1->TabIndex = 4;
 			this->button1->Text = L"Select";
 			this->button1->UseVisualStyleBackColor = true;
@@ -150,9 +158,10 @@ namespace VehicleCounter {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(659, 69);
+			this->button2->Location = System::Drawing::Point(450, 140);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(99, 38);
+			this->button2->Size = System::Drawing::Size(66, 25);
 			this->button2->TabIndex = 5;
 			this->button2->Text = L"Select";
 			this->button2->UseVisualStyleBackColor = true;
@@ -161,28 +170,31 @@ namespace VehicleCounter {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(22, 195);
+			this->label3->Location = System::Drawing::Point(26, 222);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(193, 20);
+			this->label3->Size = System::Drawing::Size(129, 13);
 			this->label3->TabIndex = 6;
 			this->label3->Text = L"Starting Time(HH MM SS)";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(22, 244);
+			this->label4->Location = System::Drawing::Point(26, 254);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(134, 20);
+			this->label4->Size = System::Drawing::Size(90, 13);
 			this->label4->TabIndex = 8;
 			this->label4->Text = L"Number Of Lanes";
 			// 
 			// button3
 			// 
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(536, 182);
+			this->button3->Location = System::Drawing::Point(357, 191);
+			this->button3->Margin = System::Windows::Forms::Padding(2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(222, 51);
+			this->button3->Size = System::Drawing::Size(148, 33);
 			this->button3->TabIndex = 10;
 			this->button3->Text = L"Start Counting";
 			this->button3->UseVisualStyleBackColor = true;
@@ -191,63 +203,70 @@ namespace VehicleCounter {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(266, 195);
+			this->label5->Location = System::Drawing::Point(188, 222);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(14, 20);
+			this->label5->Size = System::Drawing::Size(11, 13);
 			this->label5->TabIndex = 11;
 			this->label5->Text = L":";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(321, 195);
+			this->label6->Location = System::Drawing::Point(225, 222);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(14, 20);
+			this->label6->Size = System::Drawing::Size(11, 13);
 			this->label6->TabIndex = 13;
 			this->label6->Text = L":";
 			// 
 			// numericUpDown1
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(221, 192);
-			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 23, 0, 0, 0 });
+			this->numericUpDown1->Location = System::Drawing::Point(158, 220);
+			this->numericUpDown1->Margin = System::Windows::Forms::Padding(2);
+			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {23, 0, 0, 0});
 			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(39, 26);
+			this->numericUpDown1->Size = System::Drawing::Size(26, 20);
 			this->numericUpDown1->TabIndex = 15;
 			// 
 			// numericUpDown2
 			// 
-			this->numericUpDown2->Location = System::Drawing::Point(282, 192);
-			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 59, 0, 0, 0 });
+			this->numericUpDown2->Location = System::Drawing::Point(199, 220);
+			this->numericUpDown2->Margin = System::Windows::Forms::Padding(2);
+			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {59, 0, 0, 0});
 			this->numericUpDown2->Name = L"numericUpDown2";
-			this->numericUpDown2->Size = System::Drawing::Size(39, 26);
+			this->numericUpDown2->Size = System::Drawing::Size(26, 20);
 			this->numericUpDown2->TabIndex = 16;
 			// 
 			// numericUpDown3
 			// 
-			this->numericUpDown3->Location = System::Drawing::Point(341, 192);
-			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 59, 0, 0, 0 });
+			this->numericUpDown3->Location = System::Drawing::Point(238, 220);
+			this->numericUpDown3->Margin = System::Windows::Forms::Padding(2);
+			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {59, 0, 0, 0});
 			this->numericUpDown3->Name = L"numericUpDown3";
-			this->numericUpDown3->Size = System::Drawing::Size(39, 26);
+			this->numericUpDown3->Size = System::Drawing::Size(26, 20);
 			this->numericUpDown3->TabIndex = 17;
 			// 
 			// numericUpDown4
 			// 
-			this->numericUpDown4->Location = System::Drawing::Point(221, 241);
-			this->numericUpDown4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 59, 0, 0, 0 });
+			this->numericUpDown4->Location = System::Drawing::Point(158, 252);
+			this->numericUpDown4->Margin = System::Windows::Forms::Padding(2);
+			this->numericUpDown4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {59, 0, 0, 0});
 			this->numericUpDown4->Name = L"numericUpDown4";
-			this->numericUpDown4->Size = System::Drawing::Size(59, 26);
+			this->numericUpDown4->Size = System::Drawing::Size(39, 20);
 			this->numericUpDown4->TabIndex = 18;
-			this->numericUpDown4->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			this->numericUpDown4->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {1, 0, 0, 0});
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(659, 254);
+			this->button4->Location = System::Drawing::Point(439, 237);
+			this->button4->Margin = System::Windows::Forms::Padding(2);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(99, 38);
+			this->button4->Size = System::Drawing::Size(66, 25);
 			this->button4->TabIndex = 19;
 			this->button4->Text = L"Stop";
 			this->button4->UseVisualStyleBackColor = true;
@@ -256,24 +275,36 @@ namespace VehicleCounter {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(22, 146);
+			this->label7->Location = System::Drawing::Point(26, 190);
+			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(44, 20);
+			this->label7->Size = System::Drawing::Size(30, 13);
 			this->label7->TabIndex = 20;
 			this->label7->Text = L"Date";
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(140, 140);
+			this->textBox3->Location = System::Drawing::Point(104, 186);
+			this->textBox3->Margin = System::Windows::Forms::Padding(2);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(181, 26);
+			this->textBox3->Size = System::Drawing::Size(122, 20);
 			this->textBox3->TabIndex = 21;
+			// 
+			// button5
+			// 
+			this->button5->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button5.Image")));
+			this->button5->Location = System::Drawing::Point(228, 8);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(87, 91);
+			this->button5->TabIndex = 22;
+			this->button5->UseVisualStyleBackColor = true;
 			// 
 			// Main
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(853, 470);
+			this->ClientSize = System::Drawing::Size(565, 312);
+			this->Controls->Add(this->button5);
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->button4);
@@ -292,12 +323,13 @@ namespace VehicleCounter {
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Main";
-			this->Text = L"Main";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->EndInit();
+			this->Text = L"Traffic Analyzer";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown4))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

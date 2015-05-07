@@ -52,18 +52,18 @@ private:
 	bool *Moving_flag; // Flag will be true if something is moving in respective Lane
 	bool *Man_Move;		//not used
 	
-	int Number_Of_Vehicles = 0;	//Vehicle count
+	int Number_Of_Vehicles;	//Vehicle count
 	int *Lane_count;
 
 	/* NOT USED*/
 	RGB *Colours;	
 	CG *Move_Along_X;
 
-	int Start_Hour = 0;
-	int Start_Minute = 0;
-	int Start_Second = 0;
+	int Start_Hour;
+	int Start_Minute;
+	int Start_Second;
 
-	int No_Lanes = 1;
+	int No_Lanes;
 	std::string inputFileName;
 	std::string outputFileName;
 	

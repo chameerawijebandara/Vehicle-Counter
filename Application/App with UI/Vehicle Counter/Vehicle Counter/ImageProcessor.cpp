@@ -29,7 +29,13 @@ int *ImageProcessor::y_cord;
 
 ImageProcessor::ImageProcessor()
 {
+	Number_Of_Vehicles = 0;	//Vehicle count
 
+	Start_Hour = 0;
+	Start_Minute = 0;
+	Start_Second = 0;
+
+	No_Lanes = 1;
 }
 ImageProcessor::ImageProcessor(string sInputFileName, string sOutputFileName, int iStartHour, int iStartMinute, int iStartSecond, int iNoLanes) :inputFileName(sInputFileName), outputFileName(sOutputFileName), Start_Hour(iStartHour), Start_Minute(iStartMinute), Start_Second(iStartSecond), No_Lanes(iNoLanes)
 {
