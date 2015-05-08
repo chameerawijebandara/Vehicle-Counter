@@ -61,6 +61,9 @@ namespace VehicleCounter {
 	private: System::Windows::Forms::Label^  label7;
 	private: System::Windows::Forms::TextBox^  textBox3;
 	private: System::Windows::Forms::Button^  button5;
+	private: System::Windows::Forms::Label^  labelOutputTxt;
+	private: System::Windows::Forms::Button^  button6;
+	private: System::Windows::Forms::TextBox^  textBox4;
 
 
 
@@ -99,6 +102,9 @@ namespace VehicleCounter {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->labelOutputTxt = (gcnew System::Windows::Forms::Label());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown3))->BeginInit();
@@ -122,7 +128,7 @@ namespace VehicleCounter {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(26, 146);
+			this->label2->Location = System::Drawing::Point(26, 188);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(58, 13);
@@ -131,7 +137,7 @@ namespace VehicleCounter {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(104, 109);
+			this->textBox1->Location = System::Drawing::Point(114, 109);
 			this->textBox1->Margin = System::Windows::Forms::Padding(2);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(311, 20);
@@ -139,7 +145,7 @@ namespace VehicleCounter {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(104, 144);
+			this->textBox2->Location = System::Drawing::Point(114, 185);
 			this->textBox2->Margin = System::Windows::Forms::Padding(2);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(311, 20);
@@ -158,7 +164,7 @@ namespace VehicleCounter {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(450, 140);
+			this->button2->Location = System::Drawing::Point(450, 182);
 			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(66, 25);
@@ -170,7 +176,7 @@ namespace VehicleCounter {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(26, 222);
+			this->label3->Location = System::Drawing::Point(26, 266);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(129, 13);
@@ -180,7 +186,7 @@ namespace VehicleCounter {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(26, 254);
+			this->label4->Location = System::Drawing::Point(26, 298);
 			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(90, 13);
@@ -191,7 +197,7 @@ namespace VehicleCounter {
 			// 
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(357, 191);
+			this->button3->Location = System::Drawing::Point(368, 234);
 			this->button3->Margin = System::Windows::Forms::Padding(2);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(148, 33);
@@ -226,7 +232,7 @@ namespace VehicleCounter {
 			// 
 			// numericUpDown1
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(158, 220);
+			this->numericUpDown1->Location = System::Drawing::Point(158, 264);
 			this->numericUpDown1->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {23, 0, 0, 0});
 			this->numericUpDown1->Name = L"numericUpDown1";
@@ -235,7 +241,7 @@ namespace VehicleCounter {
 			// 
 			// numericUpDown2
 			// 
-			this->numericUpDown2->Location = System::Drawing::Point(199, 220);
+			this->numericUpDown2->Location = System::Drawing::Point(199, 264);
 			this->numericUpDown2->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {59, 0, 0, 0});
 			this->numericUpDown2->Name = L"numericUpDown2";
@@ -244,7 +250,7 @@ namespace VehicleCounter {
 			// 
 			// numericUpDown3
 			// 
-			this->numericUpDown3->Location = System::Drawing::Point(238, 220);
+			this->numericUpDown3->Location = System::Drawing::Point(238, 264);
 			this->numericUpDown3->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {59, 0, 0, 0});
 			this->numericUpDown3->Name = L"numericUpDown3";
@@ -253,7 +259,7 @@ namespace VehicleCounter {
 			// 
 			// numericUpDown4
 			// 
-			this->numericUpDown4->Location = System::Drawing::Point(158, 252);
+			this->numericUpDown4->Location = System::Drawing::Point(158, 296);
 			this->numericUpDown4->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {59, 0, 0, 0});
 			this->numericUpDown4->Name = L"numericUpDown4";
@@ -263,7 +269,7 @@ namespace VehicleCounter {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(439, 237);
+			this->button4->Location = System::Drawing::Point(450, 286);
 			this->button4->Margin = System::Windows::Forms::Padding(2);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(66, 25);
@@ -275,7 +281,7 @@ namespace VehicleCounter {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(26, 190);
+			this->label7->Location = System::Drawing::Point(26, 234);
 			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(30, 13);
@@ -284,7 +290,7 @@ namespace VehicleCounter {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(104, 186);
+			this->textBox3->Location = System::Drawing::Point(114, 231);
 			this->textBox3->Margin = System::Windows::Forms::Padding(2);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(122, 20);
@@ -299,11 +305,42 @@ namespace VehicleCounter {
 			this->button5->TabIndex = 22;
 			this->button5->UseVisualStyleBackColor = true;
 			// 
+			// labelOutputTxt
+			// 
+			this->labelOutputTxt->AutoSize = true;
+			this->labelOutputTxt->Location = System::Drawing::Point(26, 150);
+			this->labelOutputTxt->Name = L"labelOutputTxt";
+			this->labelOutputTxt->Size = System::Drawing::Size(84, 13);
+			this->labelOutputTxt->TabIndex = 23;
+			this->labelOutputTxt->Text = L"Output video file";
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(450, 144);
+			this->button6->Margin = System::Windows::Forms::Padding(2);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(66, 25);
+			this->button6->TabIndex = 24;
+			this->button6->Text = L"Select";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &Main::button6_Click);
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(114, 149);
+			this->textBox4->Margin = System::Windows::Forms::Padding(2);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(311, 20);
+			this->textBox4->TabIndex = 25;
+			// 
 			// Main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(565, 312);
+			this->ClientSize = System::Drawing::Size(565, 369);
+			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->button6);
+			this->Controls->Add(this->labelOutputTxt);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->label7);
@@ -338,10 +375,12 @@ namespace VehicleCounter {
 
 		String^ inFileName;
 		String^ outFileName;
+		String^ outFileNameTxt;
 		int starth;
 		int startm;
 		int starts;
 		int nol;
+		ImageProcessor *imgp;
 
 		void Validate()
 		{
@@ -365,9 +404,9 @@ namespace VehicleCounter {
 				 }
 
 
-	}
+			 }
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-				 
+
 				 saveFileDialog1->Filter = "AVI Video|*.avi";
 				 saveFileDialog1->Title = "Save output Files";
 				 saveFileDialog1->ShowDialog();
@@ -378,20 +417,34 @@ namespace VehicleCounter {
 					 textBox2->Text = _outputFileName;
 					 outFileName = _outputFileName;
 				 }
-				 
-	}
-private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-			 Validate();
-			 msclr::interop::marshal_context context;
-			 if (ImageProcessor::isVideoRun)
-			 {
-				 return;
+
 			 }
-			 ImageProcessor imgp(context.marshal_as<std::string>(inFileName), context.marshal_as<std::string>(outFileName), starth, startm, starts, nol);
-			 imgp.Start();
-}
-private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
-			 ImageProcessor::isVideoRun = false;
-}
-};
+	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+				 Validate();
+				 msclr::interop::marshal_context context;
+				 if (ImageProcessor::isVideoRun)
+				 {
+					 return;
+				 }
+				 imgp = new ImageProcessor(context.marshal_as<std::string>(inFileName), context.marshal_as<std::string>(outFileName), context.marshal_as<std::string>(outFileNameTxt), starth, startm, starts, nol);
+				 imgp->Start();
+			 }
+	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+				 ImageProcessor::isVideoRun = false;
+				 imgp->saveResults();
+			 }
+	private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) 
+			 {
+				 saveFileDialog1->Filter = "Text File|*.txt";
+				 saveFileDialog1->Title = "Save output Files";
+				 saveFileDialog1->ShowDialog();
+				 // If the file name is not an empty string, open it for saving.
+				 if (saveFileDialog1->FileName != "")
+				 {
+					 String^ _outputFileName = saveFileDialog1->FileName;
+					 textBox4->Text = _outputFileName;
+					 outFileNameTxt = _outputFileName;
+				 }
+			 }
+	};
 }

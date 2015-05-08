@@ -37,9 +37,9 @@ ImageProcessor::ImageProcessor()
 
 	No_Lanes = 1;
 }
-ImageProcessor::ImageProcessor(string sInputFileName, string sOutputFileName, int iStartHour, int iStartMinute, int iStartSecond, int iNoLanes) :inputFileName(sInputFileName), outputFileName(sOutputFileName), Start_Hour(iStartHour), Start_Minute(iStartMinute), Start_Second(iStartSecond), No_Lanes(iNoLanes)
+ImageProcessor::ImageProcessor(string sInputFileName, string sOutputFileName, std::string sOutputFileNameTxt, int iStartHour, int iStartMinute, int iStartSecond, int iNoLanes) :inputFileName(sInputFileName), outputFileName(sOutputFileName), Start_Hour(iStartHour), Start_Minute(iStartMinute), Start_Second(iStartSecond), No_Lanes(iNoLanes)
 {
-
+	this->outputFileNameTxt = sOutputFileNameTxt;
 }
 void ImageProcessor::Start()
 {
@@ -482,4 +482,14 @@ int ImageProcessor::Find_CG(Mat Binary_image)
 		return -1;
 	}
 	return Sigma_Ax / Sigma_A;
+}
+
+void ImageProcessor::saveResults()
+{
+	std::ofstream resultFile;
+    resultFile.open (outputFileNameTxt.c_str());
+	resultFile << "Results\n\n";
+	resultFile << this->Start_Hour << this->Start_Minute << this->Start_Second << " to ";
+	resultFile << "\t" << *(*this).Lane_count << "\n";
+	resultFile.close();	
 }

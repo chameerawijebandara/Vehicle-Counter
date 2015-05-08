@@ -6,13 +6,14 @@ class ImageProcessor
 {
 public:
 	ImageProcessor();
-	ImageProcessor::ImageProcessor(std::string sInputFileName, std::string sOutputFileName, int iStartHour, int iStartMinute, int iStartSecond, int iNoLanes);
+	ImageProcessor::ImageProcessor(std::string sInputFileName, std::string sOutputFileName, std::string sOutputFileNameTxt, int iStartHour, int iStartMinute, int iStartSecond, int iNoLanes);
 
 	bool Ismoving(cv::Mat previous, cv::Mat current);
 	void Show_Avg(cv::Mat image, cv::Mat B_image);	//not used
 	bool Ischanged(cv::Mat previous, cv::Mat current);
 	int Find_CG(cv::Mat Binary_image);	//not used
 	void Start();
+	void saveResults();
 
 	/*These detail will taken from rectangles drawn by*/
 	static int *w;			// width of the rect
@@ -66,6 +67,7 @@ private:
 	int No_Lanes;
 	std::string inputFileName;
 	std::string outputFileName;
+	std::string outputFileNameTxt;
 	
 };
 
