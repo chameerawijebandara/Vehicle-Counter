@@ -1,6 +1,7 @@
 #pragma once
 
 #include <opencv2\highgui\highgui.hpp>
+#include <vector>
 
 class ImageProcessor
 {
@@ -55,7 +56,7 @@ private:
 	bool *Man_Move;		//not used
 	
 	int Number_Of_Vehicles;	//Vehicle count
-	int *Lane_count;
+	std::vector<std::vector<int>> Lane_count;
 
 	/* NOT USED*/
 	RGB *Colours;	
@@ -64,6 +65,7 @@ private:
 	int Start_Hour;
 	int Start_Minute;
 	int Start_Second;
+	int curentTimeBlock;
 
 	int No_Lanes;
 	std::string inputFileName;

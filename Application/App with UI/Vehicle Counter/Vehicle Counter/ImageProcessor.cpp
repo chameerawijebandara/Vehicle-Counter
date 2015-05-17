@@ -56,11 +56,9 @@ void ImageProcessor::MarkTrackers()
 	Moving_flag = new bool[No_Lanes];
 	Man_Move = new bool[No_Lanes];
 
-	Lane_count = new int[No_Lanes];
 	for (int i = 0; i < No_Lanes; i++)
 	{
 		Moving_flag[i] = Man_Move[i] = false;
-		Lane_count[i] = 0;
 	}
 
 	Colours = new RGB[No_Lanes];
@@ -143,6 +141,18 @@ void ImageProcessor::Start()
 	CvCapture* cap = cvCreateFileCapture(inputFileName.c_str());	//reopen video for proccess
 	previous = cvQueryFrame(cap);
 
+	for (int i = 0; i < No_Lanes; i++)
+	{
+		vector<int> temp;
+		for (int j = 0; j < 96; j++)
+		{
+			temp.push_back(i*No_Lanes+j);
+		}
+		Lane_count.push_back(temp);
+
+	}
+	
+	namedWindow("Output", WINDOW_NORMAL);
 	for (int j = 0; isVideoRun; j++)	//27000 frames for 15 minutes(Frame rate=30)
 	{
 
@@ -150,10 +160,12 @@ void ImageProcessor::Start()
 		image = crop = cvQueryFrame(cap);	//capture Frame
 		image = crop = cvQueryFrame(cap);
 		image = crop = cvQueryFrame(cap);
+		curentTimeBlock = (Start_Hour * 60 + Start_Minute + (3 * j + 2) / 1800)/(96);
+
 		if (image.empty())
 		{
 			cout << "\n**********END OF VIDEO*********";
-			cvDestroyWindow("Video");
+			cvDestroyWindow("Output");
 			return ;
 		}
 		temp = image.clone();
@@ -192,29 +204,29 @@ void ImageProcessor::Start()
 
 		/*print vehice count*/
 		for (Lane = 0; Lane < No_Lanes; Lane++){
-			sprintf(String_to_show, "Lane %d=%d", Lane + 1, Lane_count[Lane]);
+			sprintf(String_to_show, "Lane %d=%d", Lane + 1, Lane_count[Lane][curentTimeBlock]);
 			putText(temp, String_to_show, Point(25, 30 + 42 * Lane), FONT_HERSHEY_SIMPLEX, 1, Scalar(0, 0, 255), 2, 8, false);
 		}
 		/*********************************************************************/
 
 		/*calculate and print time*/
-		seconds = ((j + 2) / 30 + Start_Second) % 60;
-		minutes = ((j + 2) / 1800 + Start_Minute) % 60;
-		hours = Start_Hour + ((j + 2) / 1800 + Start_Minute) / 60;
+		seconds = ((3 * j + 2) / 30 + Start_Second) % 60;
+		minutes = ((3 * j + 2) / 1800 + Start_Minute) % 60;
+		hours = Start_Hour + ((3 * j + 2) / 1800 + Start_Minute) / 60;
 
 		sprintf(String_to_show, "Time=%d.%d.%d", hours, minutes, seconds);
 		putText(temp, String_to_show, Point(1000, 38), FONT_ITALIC, 1.2, Scalar(0, 0, 255), 2, 8, false);
 		/**********************************************************************/
 
 
-		imshow("Video", temp);	//show video
+		imshow("Output", temp);	//show video
 		Video.write(temp);		//write video
 
 		while (!waitKey(5))
 			flag = false;
 	}
 	isVideoRun = false;
-	cvDestroyWindow("Video");
+	cvDestroyWindow("Output");
 	return;
 }
 
@@ -321,7 +333,7 @@ bool ImageProcessor::Ismoving(Mat previous, Mat current)
 
 	if (Moving_flag[Lane] && !Man_Move[Lane]){      //Man move is not using for now
 		Number_Of_Vehicles++;
-		Lane_count[Lane]++;
+		Lane_count[Lane][curentTimeBlock]++;
 	}
 
 	Moving_flag[Lane] = Man_Move[Lane] = false;
@@ -480,7 +492,21 @@ void ImageProcessor::saveResults()
 	std::ofstream resultFile;
     resultFile.open (outputFileNameTxt.c_str());
 	resultFile << "Results\n\n";
-	resultFile << this->Start_Hour << this->Start_Minute << this->Start_Second << " to ";
-	resultFile << "\t" << *(*this).Lane_count << "\n";
+	resultFile << "Time Block ,\t\t\t";
+
+	for (int i = 0; i < No_Lanes; i++)
+	{
+		resultFile << "Lane " << (i + 1) << ",\t";
+	}
+	resultFile << endl;
+	for (int i = 0; i < 96; i++)
+	{
+		resultFile << "15 Minutes from " << (i / 4) << ":" << (i % 4) * 15<<",\t";
+		for (int j = 0; j < No_Lanes; j++)
+		{
+			resultFile << Lane_count[j][i] << ",\t";
+		}
+		resultFile << endl;
+	}
 	resultFile.close();	
 }
