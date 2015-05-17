@@ -18,6 +18,11 @@ bool ImageProcessor::First_mouse_click_done = false;
 int ImageProcessor::Lane = 0;
 bool ImageProcessor::temp_flag = false;
 bool ImageProcessor::isVideoRun = false;
+bool ImageProcessor::isVideoOut = false;
+bool ImageProcessor::isVideoShow = true;
+std::string ImageProcessor::currentVideo;
+int ImageProcessor::totFrams;
+int ImageProcessor::currentFrame;
 
 Mat ImageProcessor::temp;
 Mat ImageProcessor::previous;
@@ -43,16 +48,20 @@ void ImageProcessor::MarkTrackers()
 {
 	CvCapture* cap = cvCreateFileCapture(inputFileName.c_str());	//Open video.Video will be reopend Later
 
+	
 	VideoWriter Video;
 	char String_to_show[20];
-	Video.open(outputFileName.c_str(), CV_FOURCC('M', 'P', '4', '3'), 30, Size(1440, 1080), true);
-	if (!Video.isOpened())
+	if (isVideoOut)
 	{
-		cout << "Could not open the output video for write\n";
-		isVideoRun = false;
-		return;
-	}
 
+		Video.open(outputFileName.c_str(), CV_FOURCC('M', 'P', '4', '3'), 30, Size(1440, 1080), true);
+		if (!Video.isOpened())
+		{
+			cout << "Could not open the output video for write\n";
+			isVideoRun = false;
+			return;
+		}
+	}
 	Moving_flag = new bool[No_Lanes];
 	Man_Move = new bool[No_Lanes];
 
@@ -151,12 +160,17 @@ void ImageProcessor::Start()
 		Lane_count.push_back(temp);
 
 	}
-	
-	namedWindow("Output", WINDOW_NORMAL);
+	if (isVideoShow)
+	{
+		namedWindow("Output", WINDOW_NORMAL);
+	}
+	totFrams = cvGetCaptureProperty(cap, CV_CAP_PROP_FRAME_COUNT);
+
 	for (int j = 0; isVideoRun; j++)	//27000 frames for 15 minutes(Frame rate=30)
 	{
 
-		cout << j << ")  ";
+
+		currentFrame = cvGetCaptureProperty(cap, CV_CAP_PROP_POS_FRAMES);
 		image = crop = cvQueryFrame(cap);	//capture Frame
 		image = crop = cvQueryFrame(cap);
 		image = crop = cvQueryFrame(cap);
@@ -218,15 +232,23 @@ void ImageProcessor::Start()
 		putText(temp, String_to_show, Point(1000, 38), FONT_ITALIC, 1.2, Scalar(0, 0, 255), 2, 8, false);
 		/**********************************************************************/
 
+		if (isVideoShow)
+		{
+			imshow("Output", temp);	//show video
+		}
 
-		imshow("Output", temp);	//show video
-		Video.write(temp);		//write video
-
+		if (isVideoOut)
+		{
+			Video.write(temp);		//write video
+		}
 		while (!waitKey(5))
 			flag = false;
 	}
 	isVideoRun = false;
-	cvDestroyWindow("Output");
+	if (isVideoShow)
+	{
+		cvDestroyWindow("Output");
+	}
 	return;
 }
 

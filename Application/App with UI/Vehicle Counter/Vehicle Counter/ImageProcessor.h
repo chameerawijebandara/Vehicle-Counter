@@ -32,6 +32,11 @@ public:
 	static bool Isclicked2;
 	static bool First_mouse_click_done;
 	static bool isVideoRun;
+	static bool isVideoOut;
+	static bool isVideoShow;
+	static std::string currentVideo;
+	static int totFrams;
+	static int currentFrame;
 
 	static int Lane;			// Current Lane number wich the proccess is doing
 

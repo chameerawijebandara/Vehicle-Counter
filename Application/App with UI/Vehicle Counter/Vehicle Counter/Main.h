@@ -58,23 +58,33 @@ namespace VehicleCounter {
 	private: System::Windows::Forms::NumericUpDown^  numericUpDown3;
 	private: System::Windows::Forms::NumericUpDown^  numericUpDown4;
 	private: System::Windows::Forms::Button^  button4;
-	private: System::Windows::Forms::Label^  label7;
+
 
 
 	private: System::Windows::Forms::Label^  labelOutputTxt;
 	private: System::Windows::Forms::Button^  button6;
 	private: System::Windows::Forms::TextBox^  textBox4;
-	private: System::Windows::Forms::NumericUpDown^  numericUpDown5;
-	private: System::Windows::Forms::Label^  label8;
-	private: System::Windows::Forms::NumericUpDown^  numericUpDown6;
-	private: System::Windows::Forms::Label^  label9;
-	private: System::Windows::Forms::NumericUpDown^  numericUpDown7;
+
+
+
+
+
 	private: System::Windows::Forms::Panel^  panel1;
 	private: System::Windows::Forms::Button^  button7;
 	private: System::Windows::Forms::Panel^  panel2;
 	private: System::Windows::Forms::Button^  button8;
 	private: System::Windows::Forms::Label^  label10;
 	private: System::Windows::Forms::CheckBox^  checkBox1;
+	private: System::Windows::Forms::CheckBox^  checkBox2;
+	private: System::Windows::Forms::Label^  label11;
+	private: System::Windows::Forms::ProgressBar^  progressBar1;
+	private: System::Windows::Forms::Label^  label12;
+	private: System::Windows::Forms::DateTimePicker^  dateTimePicker2;
+
+	private: System::Windows::Forms::Label^  label7;
+
+	private: System::Windows::Forms::Timer^  timer1;
+	private: System::ComponentModel::IContainer^  components;
 
 
 
@@ -82,7 +92,7 @@ namespace VehicleCounter {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -91,6 +101,7 @@ namespace VehicleCounter {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -109,28 +120,26 @@ namespace VehicleCounter {
 			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->numericUpDown4 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->labelOutputTxt = (gcnew System::Windows::Forms::Label());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->numericUpDown5 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->numericUpDown6 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->numericUpDown7 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
-			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->progressBar1 = (gcnew System::Windows::Forms::ProgressBar());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->SuspendLayout();
@@ -161,19 +170,20 @@ namespace VehicleCounter {
 			// 
 			this->textBox1->Location = System::Drawing::Point(186, 63);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(464, 26);
+			this->textBox1->Size = System::Drawing::Size(561, 26);
 			this->textBox1->TabIndex = 2;
 			// 
 			// textBox2
 			// 
+			this->textBox2->Enabled = false;
 			this->textBox2->Location = System::Drawing::Point(252, 180);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(398, 26);
+			this->textBox2->Size = System::Drawing::Size(495, 26);
 			this->textBox2->TabIndex = 3;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(675, 58);
+			this->button1->Location = System::Drawing::Point(781, 58);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(99, 35);
 			this->button1->TabIndex = 4;
@@ -183,7 +193,8 @@ namespace VehicleCounter {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(675, 175);
+			this->button2->Enabled = false;
+			this->button2->Location = System::Drawing::Point(781, 175);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(99, 38);
 			this->button2->TabIndex = 5;
@@ -213,7 +224,7 @@ namespace VehicleCounter {
 			// 
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(525, 92);
+			this->button3->Location = System::Drawing::Point(626, 92);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(222, 51);
 			this->button3->TabIndex = 10;
@@ -278,22 +289,13 @@ namespace VehicleCounter {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(648, 172);
+			this->button4->Location = System::Drawing::Point(749, 172);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(99, 38);
 			this->button4->TabIndex = 19;
 			this->button4->Text = L"Stop";
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &Main::button4_Click);
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(240, 331);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(44, 20);
-			this->label7->TabIndex = 20;
-			this->label7->Text = L"Date";
 			// 
 			// labelOutputTxt
 			// 
@@ -307,7 +309,7 @@ namespace VehicleCounter {
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(675, 117);
+			this->button6->Location = System::Drawing::Point(781, 117);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(99, 38);
 			this->button6->TabIndex = 24;
@@ -319,58 +321,14 @@ namespace VehicleCounter {
 			// 
 			this->textBox4->Location = System::Drawing::Point(186, 124);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(464, 26);
+			this->textBox4->Size = System::Drawing::Size(561, 26);
 			this->textBox4->TabIndex = 25;
-			// 
-			// numericUpDown5
-			// 
-			this->numericUpDown5->Location = System::Drawing::Point(240, 363);
-			this->numericUpDown5->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 23, 0, 0, 0 });
-			this->numericUpDown5->Name = L"numericUpDown5";
-			this->numericUpDown5->Size = System::Drawing::Size(58, 26);
-			this->numericUpDown5->TabIndex = 26;
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(333, 331);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(54, 20);
-			this->label8->TabIndex = 27;
-			this->label8->Text = L"Month";
-			// 
-			// numericUpDown6
-			// 
-			this->numericUpDown6->Location = System::Drawing::Point(326, 363);
-			this->numericUpDown6->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 12, 0, 0, 0 });
-			this->numericUpDown6->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-			this->numericUpDown6->Name = L"numericUpDown6";
-			this->numericUpDown6->Size = System::Drawing::Size(58, 26);
-			this->numericUpDown6->TabIndex = 28;
-			this->numericUpDown6->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(413, 331);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(43, 20);
-			this->label9->TabIndex = 29;
-			this->label9->Text = L"Year";
-			// 
-			// numericUpDown7
-			// 
-			this->numericUpDown7->Location = System::Drawing::Point(412, 362);
-			this->numericUpDown7->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2030, 0, 0, 0 });
-			this->numericUpDown7->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2010, 0, 0, 0 });
-			this->numericUpDown7->Name = L"numericUpDown7";
-			this->numericUpDown7->Size = System::Drawing::Size(58, 26);
-			this->numericUpDown7->TabIndex = 30;
-			this->numericUpDown7->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2010, 0, 0, 0 });
 			// 
 			// panel1
 			// 
 			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel1->Controls->Add(this->label7);
+			this->panel1->Controls->Add(this->dateTimePicker2);
 			this->panel1->Controls->Add(this->label10);
 			this->panel1->Controls->Add(this->button8);
 			this->panel1->Controls->Add(this->button7);
@@ -382,14 +340,39 @@ namespace VehicleCounter {
 			this->panel1->Controls->Add(this->label5);
 			this->panel1->Location = System::Drawing::Point(25, 291);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(777, 256);
+			this->panel1->Size = System::Drawing::Size(905, 256);
 			this->panel1->TabIndex = 31;
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(12, 69);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(134, 20);
+			this->label7->TabIndex = 24;
+			this->label7->Text = L"Date of the Video";
+			// 
+			// dateTimePicker2
+			// 
+			this->dateTimePicker2->Format = System::Windows::Forms::DateTimePickerFormat::Short;
+			this->dateTimePicker2->Location = System::Drawing::Point(210, 69);
+			this->dateTimePicker2->Name = L"dateTimePicker2";
+			this->dateTimePicker2->Size = System::Drawing::Size(233, 26);
+			this->dateTimePicker2->TabIndex = 23;
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(12, 69);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(0, 20);
+			this->label10->TabIndex = 22;
 			// 
 			// button8
 			// 
 			this->button8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button8->Location = System::Drawing::Point(525, 21);
+			this->button8->Location = System::Drawing::Point(626, 21);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(222, 51);
 			this->button8->TabIndex = 21;
@@ -399,7 +382,7 @@ namespace VehicleCounter {
 			// 
 			// button7
 			// 
-			this->button7->Location = System::Drawing::Point(525, 172);
+			this->button7->Location = System::Drawing::Point(626, 172);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(99, 38);
 			this->button7->TabIndex = 20;
@@ -410,12 +393,26 @@ namespace VehicleCounter {
 			// panel2
 			// 
 			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel2->Controls->Add(this->checkBox2);
 			this->panel2->Controls->Add(this->checkBox1);
+			this->panel2->Controls->Add(this->label11);
 			this->panel2->Controls->Add(this->label2);
 			this->panel2->Location = System::Drawing::Point(25, 36);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(777, 196);
+			this->panel2->Size = System::Drawing::Size(905, 232);
 			this->panel2->TabIndex = 32;
+			// 
+			// checkBox2
+			// 
+			this->checkBox2->AutoSize = true;
+			this->checkBox2->Checked = true;
+			this->checkBox2->CheckState = System::Windows::Forms::CheckState::Checked;
+			this->checkBox2->Location = System::Drawing::Point(16, 190);
+			this->checkBox2->Name = L"checkBox2";
+			this->checkBox2->Size = System::Drawing::Size(22, 21);
+			this->checkBox2->TabIndex = 24;
+			this->checkBox2->UseVisualStyleBackColor = true;
+			this->checkBox2->CheckedChanged += gcnew System::EventHandler(this, &Main::checkBox2_CheckedChanged);
 			// 
 			// checkBox1
 			// 
@@ -425,30 +422,46 @@ namespace VehicleCounter {
 			this->checkBox1->Size = System::Drawing::Size(22, 21);
 			this->checkBox1->TabIndex = 2;
 			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &Main::checkBox1_CheckedChanged);
 			// 
-			// label10
+			// label11
 			// 
-			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(12, 69);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(134, 20);
-			this->label10->TabIndex = 22;
-			this->label10->Text = L"Number Of Lanes";
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(50, 190);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(147, 20);
+			this->label11->TabIndex = 23;
+			this->label11->Text = L"Show Output Video";
+			// 
+			// progressBar1
+			// 
+			this->progressBar1->Location = System::Drawing::Point(25, 595);
+			this->progressBar1->Name = L"progressBar1";
+			this->progressBar1->Size = System::Drawing::Size(905, 23);
+			this->progressBar1->TabIndex = 33;
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(25, 563);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(0, 20);
+			this->label12->TabIndex = 34;
+			// 
+			// timer1
+			// 
+			this->timer1->Tick += gcnew System::EventHandler(this, &Main::timer1_Tick);
 			// 
 			// Main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(847, 621);
-			this->Controls->Add(this->numericUpDown7);
-			this->Controls->Add(this->label9);
-			this->Controls->Add(this->numericUpDown6);
-			this->Controls->Add(this->label8);
-			this->Controls->Add(this->numericUpDown5);
+			this->ClientSize = System::Drawing::Size(1016, 635);
+			this->Controls->Add(this->label12);
+			this->Controls->Add(this->progressBar1);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->labelOutputTxt);
-			this->Controls->Add(this->label7);
 			this->Controls->Add(this->numericUpDown4);
 			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->label4);
@@ -466,9 +479,6 @@ namespace VehicleCounter {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
@@ -479,25 +489,44 @@ namespace VehicleCounter {
 		}
 #pragma endregion
 
-		String^ inFileName;
-		String^ outFileName;
-		String^ outFileNameTxt;
+		String^ inFileName = "";
+		String^ outFileName = "";
+		String^ outFileNameTxt = "";
 		int starth;
 		int startm;
 		int starts;
 		int nol;
 		ImageProcessor *imgp;
 
-		void Validate()
+		bool Validate()
 		{
 			starth = (int)numericUpDown1->Value;
 			startm = (int)numericUpDown2->Value;
 			starts = (int)numericUpDown3->Value;
 
 			nol = (int)numericUpDown4->Value;
+
+			if (inFileName->Length == 0)
+			{
+				textBox1->BackColor = Color::Red;
+				return false;
+			}
+			
+			if (outFileNameTxt->Length == 0)
+			{
+				textBox4->BackColor = Color::Red;
+				return false;
+			}
+			if (ImageProcessor::isVideoOut & outFileName->Length == 0)
+			{
+				textBox2->BackColor = Color::Red;
+				return false;
+			}
+			return true;
 		}
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 
+				 textBox1->BackColor = Color::White;
 				 openFileDialog1->Filter = "Video Files|*.MTS";
 				 openFileDialog1->Title = "Select a Video File";
 				 openFileDialog1->FileName = "";
@@ -513,6 +542,7 @@ namespace VehicleCounter {
 	}
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 
+				 textBox2->BackColor = Color::White;
 				 saveFileDialog1->Filter = "AVI Video|*.avi";
 				 saveFileDialog1->Title = "Save output Files";
 				 saveFileDialog1->ShowDialog();
@@ -526,15 +556,19 @@ namespace VehicleCounter {
 
 	}
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+				 timer1->Start();
 				 imgp->Start();
 				 imgp->saveResults();
+				 timer1->Stop();
 	}
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 				 ImageProcessor::isVideoRun = false;
 				 imgp->saveResults();
+				 timer1->Stop();
 	}
 	private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e)
 	{
+				 textBox4->BackColor = Color::White;
 				 saveFileDialog1->Filter = "Text File|*.txt";
 				 saveFileDialog1->Title = "Save output Files";
 				 saveFileDialog1->ShowDialog();
@@ -549,7 +583,10 @@ namespace VehicleCounter {
 	private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
-				 Validate();
+				 if (!Validate())
+				 {
+					 return;
+				 }
 				 msclr::interop::marshal_context context;
 				 if (ImageProcessor::isVideoRun)
 				 {
@@ -558,5 +595,21 @@ namespace VehicleCounter {
 				 imgp = new ImageProcessor(context.marshal_as<std::string>(inFileName), context.marshal_as<std::string>(outFileName), context.marshal_as<std::string>(outFileNameTxt), starth, startm, starts, nol);
 				 imgp->MarkTrackers();
 	}
+private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 textBox2->Enabled = !textBox2->Enabled;
+			 button2->Enabled = !button2->Enabled;
+			 
+			 ImageProcessor::isVideoOut = button2->Enabled;
+}
+private: System::Void checkBox2_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 ImageProcessor::isVideoShow = !ImageProcessor::isVideoShow;
+}
+
+
+private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
+			 progressBar1->Maximum = ImageProcessor::totFrams;
+			 progressBar1->Value = ImageProcessor::currentFrame;
+
+}
 };
 }
