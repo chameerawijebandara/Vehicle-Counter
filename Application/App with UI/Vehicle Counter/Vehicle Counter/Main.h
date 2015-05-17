@@ -560,6 +560,7 @@ namespace VehicleCounter {
 				 imgp->Start();
 				 imgp->saveResults();
 				 timer1->Stop();
+				 MessageBox::Show("DONE");
 	}
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 				 ImageProcessor::isVideoRun = false;
@@ -608,7 +609,7 @@ private: System::Void checkBox2_CheckedChanged(System::Object^  sender, System::
 
 private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
 			 progressBar1->Maximum = ImageProcessor::totFrams;
-			 progressBar1->Value = ImageProcessor::currentFrame;
+			 progressBar1->Value = 2 * ImageProcessor::currentFrame;
 
 }
 };

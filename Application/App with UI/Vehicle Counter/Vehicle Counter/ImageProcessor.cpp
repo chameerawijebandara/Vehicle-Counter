@@ -155,7 +155,7 @@ void ImageProcessor::Start()
 		vector<int> temp;
 		for (int j = 0; j < 96; j++)
 		{
-			temp.push_back(i*No_Lanes+j);
+			temp.push_back(0);
 		}
 		Lane_count.push_back(temp);
 
@@ -174,7 +174,7 @@ void ImageProcessor::Start()
 		image = crop = cvQueryFrame(cap);	//capture Frame
 		image = crop = cvQueryFrame(cap);
 		image = crop = cvQueryFrame(cap);
-		curentTimeBlock = (Start_Hour * 60 + Start_Minute + (3 * j + 2) / 1800)/(96);
+		curentTimeBlock = (Start_Hour * 60 + Start_Minute + (3 * j + 2) / 1800)/(15);
 
 		if (image.empty())
 		{
