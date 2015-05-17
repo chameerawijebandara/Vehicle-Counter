@@ -30,29 +30,21 @@ int *ImageProcessor::y_cord;
 ImageProcessor::ImageProcessor()
 {
 	Number_Of_Vehicles = 0;	//Vehicle count
-
 	Start_Hour = 0;
 	Start_Minute = 0;
 	Start_Second = 0;
-
 	No_Lanes = 1;
 }
 ImageProcessor::ImageProcessor(string sInputFileName, string sOutputFileName, std::string sOutputFileNameTxt, int iStartHour, int iStartMinute, int iStartSecond, int iNoLanes) :inputFileName(sInputFileName), outputFileName(sOutputFileName), Start_Hour(iStartHour), Start_Minute(iStartMinute), Start_Second(iStartSecond), No_Lanes(iNoLanes)
 {
 	this->outputFileNameTxt = sOutputFileNameTxt;
 }
-void ImageProcessor::Start()
+void ImageProcessor::MarkTrackers()
 {
-	isVideoRun = true;
 	CvCapture* cap = cvCreateFileCapture(inputFileName.c_str());	//Open video.Video will be reopend Later
 
-	bool flag = false;
-	char String_to_show[20];
-	int hours,
-		minutes,
-		seconds;
-
 	VideoWriter Video;
+	char String_to_show[20];
 	Video.open(outputFileName.c_str(), CV_FOURCC('M', 'P', '4', '3'), 30, Size(1440, 1080), true);
 	if (!Video.isOpened())
 	{
@@ -61,18 +53,12 @@ void ImageProcessor::Start()
 		return;
 	}
 
-	//cout << "Starting Time(HH MM SS) :";
-	//cin >> Start_Hour >> Start_Minute >> Start_Second;
-
-
-	//cout << "Number Of Lanes=";
-	//cin >> No_Lanes;
-
 	Moving_flag = new bool[No_Lanes];
 	Man_Move = new bool[No_Lanes];
 
 	Lane_count = new int[No_Lanes];
-	for (int i = 0; i < No_Lanes; i++){
+	for (int i = 0; i < No_Lanes; i++)
+	{
 		Moving_flag[i] = Man_Move[i] = false;
 		Lane_count[i] = 0;
 	}
@@ -84,25 +70,26 @@ void ImageProcessor::Start()
 	x_cord = new int[No_Lanes];
 	y_cord = new int[No_Lanes];
 
-	namedWindow("Video", WINDOW_NORMAL);
-
-
+	namedWindow("Mark the Lanes", WINDOW_NORMAL);
 	previous = cvQueryFrame(cap);
 
-	imshow("Video", previous);
+	imshow("Mark the Lanes", previous);
 	waitKey(1);
 
 	/*Allow user two draw Rectangles*/
-	for (Lane = 0; Lane < No_Lanes; Lane++){
+	for (Lane = 0; Lane < No_Lanes; Lane++)
+	{
 		cout << "Click On The First Point:\n";
-		while (!Isclicked2){
+		while (!Isclicked2)
+		{
 
 			if (First_mouse_click_done)
 				cout << "Cancelled......................\n\nClick On The First Point:\n";
 			First_mouse_click_done = false;
 
-			while (!Isclicked){
-				setMouseCallback("Video", CallBackFunc, 0);
+			while (!Isclicked)
+			{
+				setMouseCallback("Mark the Lanes", CallBackFunc, 0);
 				waitKey(0);
 				if (Isclicked){
 					First_mouse_click_done = true;
@@ -114,7 +101,7 @@ void ImageProcessor::Start()
 
 			cout << "\nClick On The Second Point:\n";
 			if (!Isclicked2){
-				setMouseCallback("Video", CallBackFunc, 0);
+				setMouseCallback("Mark the Lanes", CallBackFunc, 0);
 				waitKey(0);
 			}
 		}
@@ -134,19 +121,27 @@ void ImageProcessor::Start()
 			h[Lane] *= -1;
 		}
 		rectangle(previous, Point(x_cord[Lane], y_cord[Lane]), Point(x_cord[Lane] + w[Lane], y_cord[Lane] + h[Lane]), Scalar(255, 0, 0), 5, 8, 0);
+		sprintf(String_to_show, "%d", Lane + 1);
+		putText(previous, String_to_show, Point(x_cord[Lane] + w[Lane] / 2 - 17, y_cord[Lane] + h[Lane] / 2 + 20), FONT_HERSHEY_SIMPLEX, 1.5, Scalar(255, 0, 0), 4, 8, false);
+		/***********************************************************/
 
 	}
+	cv::setMouseCallback("Mark the Lanes", NULL, NULL);
 	/*****************************************************************************/
-
-
+}
+void ImageProcessor::Start()
+{
+	isVideoRun = true;
 	proccess_start = true;
+	bool flag = false;
+	int hours,
+		minutes,
+		seconds;
 
-
-	cap = cvCreateFileCapture(inputFileName.c_str());	//reopen video for proccess
+	VideoWriter Video;
+	char String_to_show[20];
+	CvCapture* cap = cvCreateFileCapture(inputFileName.c_str());	//reopen video for proccess
 	previous = cvQueryFrame(cap);
-
-
-
 
 	for (int j = 0; isVideoRun; j++)	//27000 frames for 15 minutes(Frame rate=30)
 	{
@@ -386,8 +381,8 @@ void CallBackFunc(int event, int x, int y, int flags, void* userdata)
 		{
 			ImageProcessor::Isclicked = false;
 			ImageProcessor::Isclicked2 = false;
-			namedWindow("Video", WINDOW_NORMAL);
-			imshow("Video", ImageProcessor::previous);
+			namedWindow("Mark the Lanes", WINDOW_NORMAL);
+			imshow("Mark the Lanes", ImageProcessor::previous);
 		}
 		else if (event == EVENT_LBUTTONDOWN)
 		{
@@ -395,7 +390,6 @@ void CallBackFunc(int event, int x, int y, int flags, void* userdata)
 			if (ImageProcessor::First_mouse_click_done)
 			{
 				ImageProcessor::Isclicked2 = true;
-				cout << "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\t- Clicked on (" << x << ", " << y << ")\t  --> PRESS ANY KEY TO CONFIRM\n";
 			}
 			if (!ImageProcessor::First_mouse_click_done)
 			{
@@ -405,8 +399,8 @@ void CallBackFunc(int event, int x, int y, int flags, void* userdata)
 
 			ImageProcessor::temp = ImageProcessor::previous.clone();
 			circle(ImageProcessor::temp, Point(x, y), 4, Scalar(0, 0, 255), 5, 8, 0);
-			namedWindow("Video", WINDOW_NORMAL);
-			imshow("Video", ImageProcessor::temp);
+			namedWindow("Mark the Lanes", WINDOW_NORMAL);
+			imshow("Mark the Lanes", ImageProcessor::temp);
 
 			if (ImageProcessor::First_mouse_click_done)
 			{
@@ -419,17 +413,15 @@ void CallBackFunc(int event, int x, int y, int flags, void* userdata)
 		else if (event == EVENT_MOUSEMOVE && ImageProcessor::Isclicked)
 		{
 			ImageProcessor::temp = ImageProcessor::previous.clone();
-			//cout << "["<< x << ", " << y<<"]    \n";
 			rectangle(ImageProcessor::temp, Point(ImageProcessor::x_cord[ImageProcessor::Lane], ImageProcessor::y_cord[ImageProcessor::Lane]), Point(x, y), Scalar(255, 0, 0), 5, 8, 0);
 			circle(ImageProcessor::temp, Point(ImageProcessor::x_cord[ImageProcessor::Lane], ImageProcessor::y_cord[ImageProcessor::Lane]), 4, Scalar(0, 0, 255), 5, 8, 0);
-			namedWindow("Video", WINDOW_NORMAL);
-			imshow("Video", ImageProcessor::temp);
+			namedWindow("Mark the Lanes", WINDOW_NORMAL);
+			imshow("Mark the Lanes", ImageProcessor::temp);
 			waitKey(1);
 		}
 
 		if (event == EVENT_MOUSEMOVE && flags == EVENT_FLAG_SHIFTKEY)
 		{
-			cout << "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b[" << x << ", " << y << "]";
 			ImageProcessor::temp_flag = true;
 		}
 
@@ -437,7 +429,6 @@ void CallBackFunc(int event, int x, int y, int flags, void* userdata)
 		{
 			if (ImageProcessor::temp_flag)
 			{
-				cout << "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b                     ";
 				ImageProcessor::temp_flag = false;
 			}
 		}

@@ -13,6 +13,7 @@ public:
 	bool Ischanged(cv::Mat previous, cv::Mat current);
 	int Find_CG(cv::Mat Binary_image);	//not used
 	void Start();
+	void MarkTrackers();
 	void saveResults();
 
 	/*These detail will taken from rectangles drawn by*/
