@@ -24,6 +24,9 @@ namespace VehicleCounter {
 			//
 			//TODO: Add the constructor code here
 			//
+			inFileName = "";
+			outFileName = "";
+			outFileNameTxt = "";
 		}
 
 	protected:
@@ -489,9 +492,9 @@ namespace VehicleCounter {
 		}
 #pragma endregion
 
-		String^ inFileName = "";
-		String^ outFileName = "";
-		String^ outFileNameTxt = "";
+		String^ inFileName;
+		String^ outFileName;
+		String^ outFileNameTxt;
 		int starth;
 		int startm;
 		int starts;
@@ -511,13 +514,13 @@ namespace VehicleCounter {
 				textBox1->BackColor = Color::Red;
 				return false;
 			}
-			
+
 			if (outFileNameTxt->Length == 0)
 			{
 				textBox4->BackColor = Color::Red;
 				return false;
 			}
-			if (ImageProcessor::isVideoOut & outFileName->Length == 0)
+			if (ImageProcessor::isVideoOut & (outFileName->Length == 0))
 			{
 				textBox2->BackColor = Color::Red;
 				return false;
@@ -539,7 +542,7 @@ namespace VehicleCounter {
 				 }
 
 
-	}
+			 }
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 
 				 textBox2->BackColor = Color::White;
@@ -554,21 +557,21 @@ namespace VehicleCounter {
 					 outFileName = _outputFileName;
 				 }
 
-	}
+			 }
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 				 timer1->Start();
 				 imgp->Start();
 				 imgp->saveResults();
 				 timer1->Stop();
 				 MessageBox::Show("DONE");
-	}
+			 }
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 				 ImageProcessor::isVideoRun = false;
 				 imgp->saveResults();
 				 timer1->Stop();
-	}
+			 }
 	private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e)
-	{
+			 {
 				 textBox4->BackColor = Color::White;
 				 saveFileDialog1->Filter = "Text File|*.txt";
 				 saveFileDialog1->Title = "Save output Files";
@@ -580,9 +583,10 @@ namespace VehicleCounter {
 					 textBox4->Text = _outputFileName;
 					 outFileNameTxt = _outputFileName;
 				 }
-	}
+			 }
 	private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
+
+			 }
 	private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
 				 if (!Validate())
 				 {
@@ -595,22 +599,22 @@ namespace VehicleCounter {
 				 }
 				 imgp = new ImageProcessor(context.marshal_as<std::string>(inFileName), context.marshal_as<std::string>(outFileName), context.marshal_as<std::string>(outFileNameTxt), starth, startm, starts, nol);
 				 imgp->MarkTrackers();
-	}
-private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-			 textBox2->Enabled = !textBox2->Enabled;
-			 button2->Enabled = !button2->Enabled;
-			 
-			 ImageProcessor::isVideoOut = button2->Enabled;
-}
-private: System::Void checkBox2_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-			 ImageProcessor::isVideoShow = !ImageProcessor::isVideoShow;
-}
+			 }
+	private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+				 textBox2->Enabled = !textBox2->Enabled;
+				 button2->Enabled = !button2->Enabled;
+
+				 ImageProcessor::isVideoOut = button2->Enabled;
+			 }
+	private: System::Void checkBox2_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+				 ImageProcessor::isVideoShow = !ImageProcessor::isVideoShow;
+			 }
 
 
-private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
-			 progressBar1->Maximum = ImageProcessor::totFrams;
-			 progressBar1->Value = 2 * ImageProcessor::currentFrame;
+	private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
+				 progressBar1->Maximum = ImageProcessor::totFrams;
+				 progressBar1->Value = 2 * ImageProcessor::currentFrame;
 
-}
-};
+			 }
+	};
 }
