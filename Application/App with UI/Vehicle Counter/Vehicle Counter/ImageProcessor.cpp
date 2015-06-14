@@ -79,19 +79,19 @@ void ImageProcessor::MarkTrackers()
 
 	namedWindow("Mark the Lanes", WINDOW_NORMAL);
 	previous = cvQueryFrame(cap);
-
+	
 	imshow("Mark the Lanes", previous);
 	waitKey(1);
 
 	/*Allow user two draw Rectangles*/
 	for (Lane = 0; Lane < No_Lanes; Lane++)
 	{
-		cout << "Click On The First Point:\n";
+		
+		//cout << "Click On The First Point:\n";
 		while (!Isclicked2)
 		{
-
-			if (First_mouse_click_done)
-				cout << "Cancelled......................\n\nClick On The First Point:\n";
+			if (First_mouse_click_done);
+				//cout << "Cancelled......................\n\nClick On The First Point:\n";
 			First_mouse_click_done = false;
 
 			while (!Isclicked)
@@ -105,7 +105,7 @@ void ImageProcessor::MarkTrackers()
 
 			}
 
-
+			
 			cout << "\nClick On The Second Point:\n";
 			if (!Isclicked2){
 				setMouseCallback("Mark the Lanes", CallBackFunc, 0);
@@ -136,7 +136,7 @@ void ImageProcessor::MarkTrackers()
 	cv::setMouseCallback("Mark the Lanes", NULL, NULL);
 	/*****************************************************************************/
 }
-void ImageProcessor::Start()
+int ImageProcessor::Start()
 {
 	isVideoRun = true;
 	proccess_start = true;
@@ -166,9 +166,8 @@ void ImageProcessor::Start()
 	}
 	totFrams = cvGetCaptureProperty(cap, CV_CAP_PROP_FRAME_COUNT);
 
-	for (int j = 0; isVideoRun; j++)	//27000 frames for 15 minutes(Frame rate=30)
+	for (int j = 0; (j<100)&&isVideoRun; j++)	//27000 frames for 15 minutes(Frame rate=30)
 	{
-
 
 		currentFrame = cvGetCaptureProperty(cap, CV_CAP_PROP_POS_FRAMES);
 		image = crop = cvQueryFrame(cap);	//capture Frame
@@ -178,9 +177,9 @@ void ImageProcessor::Start()
 
 		if (image.empty())
 		{
-			cout << "\n**********END OF VIDEO*********";
+			//cout << "\n**********END OF VIDEO*********";
 			cvDestroyWindow("Output");
-			return ;
+			return totFrams;
 		}
 		temp = image.clone();
 
@@ -249,7 +248,8 @@ void ImageProcessor::Start()
 	{
 		cvDestroyWindow("Output");
 	}
-	return;
+	proccess_start=false;
+	return totFrams;
 }
 
 

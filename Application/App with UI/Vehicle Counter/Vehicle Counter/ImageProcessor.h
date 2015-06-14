@@ -13,7 +13,7 @@ public:
 	void Show_Avg(cv::Mat image, cv::Mat B_image);	//not used
 	bool Ischanged(cv::Mat previous, cv::Mat current);
 	int Find_CG(cv::Mat Binary_image);	//not used
-	void Start();
+	int Start();
 	void MarkTrackers();
 	void saveResults();
 
@@ -22,6 +22,9 @@ public:
 	static int	*h;			// hieght of the rect
 	static int	*x_cord;     // X cord of first point
 	static int *y_cord;     // Y cord of first point
+
+	bool *Moving_flag; // Flag will be true if something is moving in respective Lane
+	bool *Man_Move;		//not used
 
 	static cv::Mat temp;
 	static cv::Mat previous;
@@ -56,9 +59,6 @@ public:
 private:
 	cv::Point rook_points[5];	// 5 points To draw filled pollygonal to show Lane counts
 	cv::Mat image, crop;
-	
-	bool *Moving_flag; // Flag will be true if something is moving in respective Lane
-	bool *Man_Move;		//not used
 	
 	int Number_Of_Vehicles;	//Vehicle count
 	std::vector<std::vector<int>> Lane_count;
