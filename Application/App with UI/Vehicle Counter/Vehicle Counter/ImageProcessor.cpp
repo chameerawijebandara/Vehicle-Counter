@@ -6,9 +6,12 @@
 #include <vector>
 #include <fstream>
 #include <math.h>
+#include "BasicExcel.hpp"
+#include "ExcelFormat.h"
 
 using namespace cv;
 using namespace std;
+using namespace ExcelFormat;
 
 void CallBackFunc(int event, int x, int y, int flags, void* userdata);
 bool ImageProcessor::proccess_start = false;	// Flag will be true after proccess start
@@ -509,20 +512,104 @@ int ImageProcessor::Find_CG(Mat Binary_image)
 	return Sigma_Ax / Sigma_A;
 }
 
+//void ImageProcessor::saveResults()
+//{
+//	std::ofstream resultFile;
+//    resultFile.open (outputFileNameTxt.c_str());
+//	resultFile << "Results\n\n";
+//	resultFile << "Time Block ,\t\t\t";
+//
+//	for (int i = 0; i < No_Lanes; i++)
+//	{
+//		resultFile << "Lane " << (i + 1) << ",\t";
+//	}
+//	resultFile << endl;
+//	for (int i = 0; i < 96; i++)
+//	{
+//		resultFile << "15 Minutes from " << (i / 4) << ":" << (i % 4) * 15<<",\t";
+//		for (int j = 0; j < No_Lanes; j++)
+//		{
+//			resultFile << Lane_count[j][i] << ",\t";
+//		}
+//		resultFile << endl;
+//	}
+//	resultFile.close();	
+//}
+
 void ImageProcessor::saveResults()
 {
+
+	string Excel_lane;
+	char buffer[100];
+
 	std::ofstream resultFile;
     resultFile.open (outputFileNameTxt.c_str());
 	resultFile << "Results\n\n";
 	resultFile << "Time Block ,\t\t\t";
 
+	BasicExcel xls;
+	xls.New(1);
+	BasicExcelWorksheet* sheet = xls.GetWorksheet(0);
+	XLSFormatManager fmt_mgr(xls);
+
+	//ExcelFont font_red_bold;
+	//font_red_bold._weight = FW_BOLD;
+	//font_red_bold._color_index = EGA_RED;
+
+	//CellFormat fmt_red_bold(fmt_mgr, font_red_bold);
+	//fmt_red_bold.set_color1(COLOR1_PAT_SOLID);			// solid background
+	//fmt_red_bold.set_color2(MAKE_COLOR2(EGA_BLUE,0));	// blue background
+
+	ExcelFont font_bold;
+	font_bold._weight = FW_BOLD;
+
+	CellFormat fmt_bold(fmt_mgr);
+	fmt_bold.set_font(font_bold);
+
+	BasicExcelCell* cell = sheet->Cell(1, 1);
+	cell->Set("Time Block");
+	cell->SetFormat(fmt_bold);
+
 	for (int i = 0; i < No_Lanes; i++)
 	{
 		resultFile << "Lane " << (i + 1) << ",\t";
+		BasicExcelCell* cell = sheet->Cell(1, i+4);
+		sprintf(buffer, "Lane %d", i+1);
+		cell->Set(buffer);
+		cell->SetFormat(fmt_bold);
+
+	for (int i = 0; i < No_Lanes; i++)
+	{
+		resultFile << "Lane " << (i + 1) << ",\t";
+
 	}
 	resultFile << endl;
 	for (int i = 0; i < 96; i++)
 	{
+		BasicExcelCell* cell = sheet->Cell(i+2, 1);
+		resultFile << "15 Minutes from " << (i / 4) << ":" << (i % 4) * 15<<",\t";
+		sprintf(buffer, "15 Minutes from %d : %d", i/4,(i%4)*15);
+		cell->Set(buffer);
+		for (int j = 0; j < No_Lanes; j++)
+		{
+			BasicExcelCell* cell = sheet->Cell(i+2, j+4);
+			resultFile << Lane_count[j][i] << ",\t";
+
+			fmt_bold.set_format_string(XLS_FORMAT_INTEGER);
+
+			CellFormat fmt_red_bold(fmt_mgr, font_bold);
+			fmt_bold.set_color1(COLOR1_PAT_SOLID);			
+			fmt_bold.set_color2(MAKE_COLOR2(EGA_BLUE,0));
+
+			cell->Set(Lane_count[j][i]);
+			cell->SetFormat(fmt_bold);
+		}
+		resultFile << endl;
+	}
+	resultFile.close();
+
+	xls.SaveAs("oh_yeah2.xls");
+
 		resultFile << "15 Minutes from " << (i / 4) << ":" << (i % 4) * 15<<",\t";
 		for (int j = 0; j < No_Lanes; j++)
 		{
