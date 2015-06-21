@@ -50,7 +50,7 @@ ImageProcessor::ImageProcessor(string sInputFileName, string sOutputFileName, st
 {
 	this->outputFileNameTxt = sOutputFileNameTxt;
 }
-void ImageProcessor::MarkTrackers()
+bool ImageProcessor::MarkTrackers()
 {
 	CvCapture* cap = cvCreateFileCapture(inputFileName.c_str());	//Open video.Video will be reopend Later
 
@@ -65,7 +65,7 @@ void ImageProcessor::MarkTrackers()
 		{
 			cout << "Could not open the output video for write\n";
 			isVideoRun = false;
-			return;
+			return false;
 		}
 	}
 	Moving_flag = new bool[No_Lanes];
@@ -96,12 +96,26 @@ void ImageProcessor::MarkTrackers()
 		//cout << "Click On The First Point:\n";
 		while (!Isclicked2)
 		{
+			if( !cvGetWindowHandle("Mark the Lanes") )
+			{
+				Isclicked = false;
+				Isclicked2 = false;
+				First_mouse_click_done = false;
+				return false;
+			}
 			if (First_mouse_click_done);
 				//cout << "Cancelled......................\n\nClick On The First Point:\n";
 			First_mouse_click_done = false;
 
 			while (!Isclicked)
 			{
+				if( !cvGetWindowHandle("Mark the Lanes") )
+				{
+					Isclicked = false;
+					Isclicked2 = false;
+					First_mouse_click_done = false;
+					return false;
+				}
 				setMouseCallback("Mark the Lanes", CallBackFunc, 0);
 				waitKey(0);
 				if (Isclicked){
@@ -140,6 +154,7 @@ void ImageProcessor::MarkTrackers()
 
 	}
 	cv::setMouseCallback("Mark the Lanes", NULL, NULL);
+	return true;
 	/*****************************************************************************/
 }
 int ImageProcessor::Start()

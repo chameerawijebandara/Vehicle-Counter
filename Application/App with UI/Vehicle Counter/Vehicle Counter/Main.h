@@ -748,8 +748,8 @@ namespace VehicleCounter {
 					}
 
 					impgs[Video_No]->imgpp = new ImageProcessor(context.marshal_as<std::string>(inFileName), context.marshal_as<std::string>(outFileName), context.marshal_as<std::string>(outFileNameTxt), starth, startm, starts, nol);
-					impgs[Video_No]->imgpp->MarkTrackers();
-					impgs[Video_No]->Marked=true;
+					impgs[Video_No]->Marked=impgs[Video_No]->imgpp->MarkTrackers();
+					
 				}
 				 
 				 
