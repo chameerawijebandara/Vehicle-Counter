@@ -231,6 +231,7 @@ namespace VehicleCounter {
 			this->label3->Size = System::Drawing::Size(129, 13);
 			this->label3->TabIndex = 6;
 			this->label3->Text = L"Starting Time(HH MM SS)";
+			this->label3->Click += gcnew System::EventHandler(this, &Main::label3_Click);
 			// 
 			// label4
 			// 
@@ -287,6 +288,7 @@ namespace VehicleCounter {
 			this->numericUpDown1->Name = L"numericUpDown1";
 			this->numericUpDown1->Size = System::Drawing::Size(39, 20);
 			this->numericUpDown1->TabIndex = 15;
+			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &Main::numericUpDown1_ValueChanged);
 			// 
 			// numericUpDown2
 			// 
@@ -388,6 +390,7 @@ namespace VehicleCounter {
 			this->label7->Size = System::Drawing::Size(90, 13);
 			this->label7->TabIndex = 24;
 			this->label7->Text = L"Date of the Video";
+			this->label7->Click += gcnew System::EventHandler(this, &Main::label7_Click);
 			// 
 			// dateTimePicker2
 			// 
@@ -675,7 +678,7 @@ namespace VehicleCounter {
 					}
 					timer1->Start();
 					int TotalFrames=impgs[Video_No]->imgpp->Start();
-					impgs[Video_No]->imgpp->saveResults();
+					impgs[Video_No]->imgpp->saveResults(starth, startm, starts);
 					Video_No++;
 					timer1->Stop();
 
@@ -703,13 +706,13 @@ namespace VehicleCounter {
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 				 ImageProcessor::isVideoRun = false;
 				 ImageProcessor::proccess_start=false;
-				 impgs[Video_No]->imgpp->saveResults();
+				 impgs[Video_No]->imgpp->saveResults(starth, startm, starts);
 				 timer1->Stop();
 			 }
 	private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e)
 			 {
 				 textBox4->BackColor = Color::White;
-				 saveFileDialog1->Filter = "Text File|*.txt";
+				 saveFileDialog1->Filter = "Excel File|*.xls";
 				 saveFileDialog1->Title = "Save output Files";
 				 saveFileDialog1->ShowDialog();
 				 // If the file name is not an empty string, open it for saving.
@@ -769,6 +772,12 @@ namespace VehicleCounter {
 	private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 			 }
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void label7_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void numericUpDown1_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
 		 }
 };
 }

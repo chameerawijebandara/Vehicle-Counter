@@ -26,6 +26,9 @@ bool ImageProcessor::isVideoShow = true;
 std::string ImageProcessor::currentVideo;
 int ImageProcessor::totFrams;
 int ImageProcessor::currentFrame;
+int hours;
+int minutes;
+int seconds;
 
 Mat ImageProcessor::temp;
 Mat ImageProcessor::previous;
@@ -144,9 +147,6 @@ int ImageProcessor::Start()
 	isVideoRun = true;
 	proccess_start = true;
 	bool flag = false;
-	int hours,
-		minutes,
-		seconds;
 
 	VideoWriter Video;
 	char String_to_show[20];
@@ -181,6 +181,7 @@ int ImageProcessor::Start()
 		if (image.empty())
 		{
 			//cout << "\n**********END OF VIDEO*********";
+
 			cvDestroyWindow("Output");
 			return totFrams;
 		}
@@ -536,7 +537,7 @@ int ImageProcessor::Find_CG(Mat Binary_image)
 //	resultFile.close();	
 //}
 
-void ImageProcessor::saveResults()
+void ImageProcessor::saveResults(int start_h,int start_min,int start_second)
 {
 
 	string Excel_lane;
@@ -547,8 +548,8 @@ void ImageProcessor::saveResults()
 	resultFile << "Results\n\n";
 	resultFile << "Time Block ,\t\t\t";
 
-	BasicExcel xls;
-	xls.New(1);
+	BasicExcel xls("Sample.xls");
+	//xls.New(1);
 	BasicExcelWorksheet* sheet = xls.GetWorksheet(0);
 	XLSFormatManager fmt_mgr(xls);
 
@@ -577,7 +578,7 @@ void ImageProcessor::saveResults()
 		sprintf(buffer, "Lane %d", i+1);
 		cell->Set(buffer);
 		cell->SetFormat(fmt_bold);
-
+	
 	for (int i = 0; i < No_Lanes; i++)
 	{
 		resultFile << "Lane " << (i + 1) << ",\t";
@@ -588,8 +589,15 @@ void ImageProcessor::saveResults()
 	{
 		BasicExcelCell* cell = sheet->Cell(i+2, 1);
 		resultFile << "15 Minutes from " << (i / 4) << ":" << (i % 4) * 15<<",\t";
+
+		CellFormat fmt_red_bold(fmt_mgr, font_bold);
+		fmt_bold.set_color1(COLOR1_PAT_SOLID);			
+		fmt_bold.set_color2(MAKE_COLOR2(EGA_RED,EGA_WHITE));
+
 		sprintf(buffer, "15 Minutes from %d : %d", i/4,(i%4)*15);
 		cell->Set(buffer);
+		//cell->SetFormat(fmt_bold);
+
 		for (int j = 0; j < No_Lanes; j++)
 		{
 			BasicExcelCell* cell = sheet->Cell(i+2, j+4);
@@ -608,7 +616,40 @@ void ImageProcessor::saveResults()
 	}
 	resultFile.close();
 
-	xls.SaveAs("oh_yeah2.xls");
+	//color correcting in cells where videos are availabla(turning orange to red)
+	for(int hou=start_h;hou<=hours;hou++)
+	{
+		for(int minu=start_min;minu<=minutes;minu++)
+		{
+			BasicExcelCell* cell = sheet->Cell(2+hou*4+minu/15,1);
+			fmt_bold.set_color1(COLOR1_PAT_SOLID);			
+			fmt_bold.set_color2(MAKE_COLOR2(EGA_WHITE,0));
+
+			//cell->Set(buffer);
+			cell->SetFormat(fmt_bold);
+		}
+	}
+
+	//color correcting where the starting 15 min block is not completed by the video(turning orange to red)
+	if(start_min % 15 != 0)
+	{
+		BasicExcelCell* cell = sheet->Cell(2+start_h*4+start_min/15,1);
+		fmt_bold.set_color1(COLOR1_PAT_SOLID);			
+		fmt_bold.set_color2(MAKE_COLOR2(EGA_RED,0));
+
+		cell->SetFormat(fmt_bold);
+	}
+
+	//color correcting where the ending 15 min block is not completed by the video(turning orange to red)
+	if((start_min+minutes) % 15 != 0)
+	{
+		BasicExcelCell* cell = sheet->Cell(3+(start_h+hours)*4+(start_min+minutes)/15,1);
+		fmt_bold.set_color1(COLOR1_PAT_SOLID);			
+		fmt_bold.set_color2(MAKE_COLOR2(EGA_RED,0));
+
+		cell->SetFormat(fmt_bold);
+	}
+	xls.SaveAs("Sample_result.xls");
 
 		resultFile << "15 Minutes from " << (i / 4) << ":" << (i % 4) * 15<<",\t";
 		for (int j = 0; j < No_Lanes; j++)

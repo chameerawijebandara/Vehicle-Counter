@@ -15,7 +15,7 @@ public:
 	int Find_CG(cv::Mat Binary_image);	//not used
 	int Start();
 	void MarkTrackers();
-	void saveResults();
+	void saveResults(int start_h,int start_min,int start_second);
 
 	/*These detail will taken from rectangles drawn by*/
 	static int *w;			// width of the rect
