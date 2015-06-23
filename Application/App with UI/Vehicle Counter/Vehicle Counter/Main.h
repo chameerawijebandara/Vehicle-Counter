@@ -356,6 +356,7 @@ namespace VehicleCounter {
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(375, 20);
 			this->textBox4->TabIndex = 25;
+			this->textBox4->TextChanged += gcnew System::EventHandler(this, &Main::textBox4_TextChanged);
 			// 
 			// panel1
 			// 
@@ -778,6 +779,8 @@ private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  
 private: System::Void label7_Click(System::Object^  sender, System::EventArgs^  e) {
 		 }
 private: System::Void numericUpDown1_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void textBox4_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 		 }
 };
 }
