@@ -563,24 +563,95 @@ void ImageProcessor::saveResults(int start_h,int start_min,int start_second)
 	//resultFile << "Results\n\n";
 	//resultFile << "Time Block ,\t\t\t";
 
-	try
+	BasicExcel xls;
+	if(xls.Load(outputFileNameTxt.c_str()))
 	{
-		BasicExcel xls(outputFileNameTxt.c_str());
-		//BasicExcel xls;
-		xls.New(1);
-		BasicExcelWorksheet* sheet = xls.GetWorksheet(0);
+		/*BasicExcelWorksheet* sheet = xls.GetWorksheet(0);
 		XLSFormatManager fmt_mgr(xls);
-
-		//ExcelFont font_red_bold;
-		//font_red_bold._weight = FW_BOLD;
-		//font_red_bold._color_index = EGA_RED;
-
-		//CellFormat fmt_red_bold(fmt_mgr, font_red_bold);
-		//fmt_red_bold.set_color1(COLOR1_PAT_SOLID);			// solid background
-		//fmt_red_bold.set_color2(MAKE_COLOR2(EGA_BLUE,0));	// blue background
 
 		ExcelFont font_bold;
 		font_bold._weight = FW_BOLD;
+		CellFormat fmt_bold(fmt_mgr);
+		fmt_bold.set_font(font_bold);
+
+		BasicExcelCell* cell = sheet->Cell(1, 1);
+		cell->Set("Time Block");
+		cell->SetFormat(fmt_bold);
+
+		for (int i = 0; i < No_Lanes; i++)
+		{
+			BasicExcelCell* cell = sheet->Cell(1, i+4);
+			sprintf(buffer, "Lane %d", i+1);
+			cell->Set(buffer);
+			cell->SetFormat(fmt_bold);
+		}
+		for (int i = (2+(start_h*4)+(start_min/15)); i <= (2+(hours*4)+(minutes/15)); i++)
+		{
+			for (int j = 0; j < No_Lanes; j++)
+			{
+				BasicExcelCell* cell = sheet->Cell(i, j+4);
+				fmt_bold.set_format_string(XLS_FORMAT_INTEGER);
+
+				CellFormat fmt_bold(fmt_mgr, font_bold);
+				fmt_bold.set_color1(COLOR1_PAT_SOLID);			
+				fmt_bold.set_color2(MAKE_COLOR2(EGA_WHITE,0));
+
+				cell->Set(Lane_count[j][i-2]);
+				cell->SetFormat(fmt_bold);
+			}
+		}
+
+		for(int hou=start_h;hou<=hours;hou++)
+		{
+			for(int minu=start_min;minu<=minutes;minu++)
+			{
+				BasicExcelCell* cell = sheet->Cell(2+hou*4+minu/15,1);
+				CellFormat fmt_bold(fmt_mgr, font_bold);
+				fmt_bold.set_color1(COLOR1_PAT_SOLID);			
+				fmt_bold.set_color2(MAKE_COLOR2(EGA_WHITE,0));
+
+				cell->SetFormat(fmt_bold);
+			}
+		}
+
+	//color correcting where the starting 15 min block is not completed by the video(turning orange to red)
+		if(start_min % 15 != 0)
+		{
+			BasicExcelCell* cell = sheet->Cell(2+(start_h*4)+(start_min/15),1);
+			CellFormat fmt_bold(fmt_mgr, font_bold);
+			fmt_bold.set_color1(COLOR1_PAT_SOLID);			
+			fmt_bold.set_color2(MAKE_COLOR2(EGA_RED,0));
+
+			cell->SetFormat(fmt_bold);
+		}
+
+	//color correcting where the ending 15 min block is not completed by the video(turning orange to red)
+		if(minutes % 15 != 0 || minutes==0)
+		{
+			BasicExcelCell* cell = sheet->Cell(2+(hours*4)+(minutes/15),1);
+			CellFormat fmt_bold(fmt_mgr, font_bold);
+			fmt_bold.set_color1(COLOR1_PAT_SOLID);			
+			fmt_bold.set_color2(MAKE_COLOR2(EGA_RED,0));
+
+			cell->SetFormat(fmt_bold);
+		}
+		for(int i=0; i<96 ;i++)
+		{
+			BasicExcelCell* cell = sheet->Cell(i+2, 1);
+			ExcelFont font_color;
+			font_color.set_color_index(EGA_BLACK);
+			CellFormat fmt_bold(fmt_mgr, font_color);
+			sprintf(buffer, "15 Minutes from %d : %d", i/4,(i%4)*15);
+			cell->Set(buffer);
+			cell->SetFormat(fmt_bold);
+		}
+		xls.SaveAs(outputFileNameTxt.c_str());*/
+		BasicExcelWorksheet* sheet = xls.GetWorksheet(0);
+		XLSFormatManager fmt_mgr(xls);
+
+		ExcelFont font_bold;
+		font_bold._weight = FW_BOLD;
+		font_bold.set_color_index(EGA_BLACK);
 
 		CellFormat fmt_bold(fmt_mgr);
 		fmt_bold.set_font(font_bold);
@@ -601,9 +672,6 @@ void ImageProcessor::saveResults(int start_h,int start_min,int start_second)
 		{
 			BasicExcelCell* cell = sheet->Cell(i+2, 1);
 			CellFormat fmt_bold(fmt_mgr, font_bold);
-			fmt_bold.set_color1(COLOR1_PAT_SOLID);			
-			fmt_bold.set_color2(MAKE_COLOR2(EGA_RED,EGA_WHITE));
-
 			sprintf(buffer, "15 Minutes from %d : %d", i/4,(i%4)*15);
 			cell->Set(buffer);
 			//cell->SetFormat(fmt_bold);
@@ -621,7 +689,7 @@ void ImageProcessor::saveResults(int start_h,int start_min,int start_second)
 				fmt_bold.set_color1(COLOR1_PAT_SOLID);			
 				fmt_bold.set_color2(MAKE_COLOR2(EGA_BLUE,0));
 
-				cell->Set(Lane_count[j][i]);
+				cell->Set(Lane_count[j][i-2]);
 				cell->SetFormat(fmt_bold);
 			}
 		}
@@ -645,7 +713,7 @@ void ImageProcessor::saveResults(int start_h,int start_min,int start_second)
 			BasicExcelCell* cell = sheet->Cell(2+(start_h*4)+(start_min/15),1);
 			CellFormat fmt_bold(fmt_mgr, font_bold);
 			fmt_bold.set_color1(COLOR1_PAT_SOLID);			
-			fmt_bold.set_color2(MAKE_COLOR2(EGA_BLUE,0));
+			fmt_bold.set_color2(MAKE_COLOR2(EGA_RED,0));
 
 			cell->SetFormat(fmt_bold);
 		}
@@ -656,25 +724,22 @@ void ImageProcessor::saveResults(int start_h,int start_min,int start_second)
 			BasicExcelCell* cell = sheet->Cell(2+(hours*4)+(minutes/15),1);
 			CellFormat fmt_bold(fmt_mgr, font_bold);
 			fmt_bold.set_color1(COLOR1_PAT_SOLID);			
-			fmt_bold.set_color2(MAKE_COLOR2(EGA_BLUE,0));
+			fmt_bold.set_color2(MAKE_COLOR2(EGA_RED,0));
 
 			cell->SetFormat(fmt_bold);
 		}
 		xls.SaveAs(outputFileNameTxt.c_str());
 	}
 
-
-	catch(...)
+	else
 	{
 		BasicExcel xls("Sample.xls");
-		//BasicExcel xls(outputFileNameTxt.c_str());
-		//BasicExcel xls;
-		xls.New(1);
 		BasicExcelWorksheet* sheet = xls.GetWorksheet(0);
 		XLSFormatManager fmt_mgr(xls);
 
 		ExcelFont font_bold;
 		font_bold._weight = FW_BOLD;
+
 		CellFormat fmt_bold(fmt_mgr);
 		fmt_bold.set_font(font_bold);
 
@@ -694,12 +759,9 @@ void ImageProcessor::saveResults(int start_h,int start_min,int start_second)
 		{
 			BasicExcelCell* cell = sheet->Cell(i+2, 1);
 			CellFormat fmt_bold(fmt_mgr, font_bold);
-			fmt_bold.set_color1(COLOR1_PAT_SOLID);			
-			fmt_bold.set_color2(MAKE_COLOR2(EGA_RED,EGA_WHITE));
-
 			sprintf(buffer, "15 Minutes from %d : %d", i/4,(i%4)*15);
 			cell->Set(buffer);
-			cell->SetFormat(fmt_bold);
+			//cell->SetFormat(fmt_bold);
 		}
 
 		for (int i = (2+(start_h*4)+(start_min/15)); i <= (2+(hours*4)+(minutes/15)); i++)
@@ -714,7 +776,7 @@ void ImageProcessor::saveResults(int start_h,int start_min,int start_second)
 				fmt_bold.set_color1(COLOR1_PAT_SOLID);			
 				fmt_bold.set_color2(MAKE_COLOR2(EGA_BLUE,0));
 
-				cell->Set(Lane_count[j][i]);
+				cell->Set(Lane_count[j][i-2]);
 				cell->SetFormat(fmt_bold);
 			}
 		}
@@ -738,7 +800,7 @@ void ImageProcessor::saveResults(int start_h,int start_min,int start_second)
 			BasicExcelCell* cell = sheet->Cell(2+(start_h*4)+(start_min/15),1);
 			CellFormat fmt_bold(fmt_mgr, font_bold);
 			fmt_bold.set_color1(COLOR1_PAT_SOLID);			
-			fmt_bold.set_color2(MAKE_COLOR2(EGA_BLUE,0));
+			fmt_bold.set_color2(MAKE_COLOR2(EGA_RED,0));
 
 			cell->SetFormat(fmt_bold);
 		}
@@ -749,7 +811,7 @@ void ImageProcessor::saveResults(int start_h,int start_min,int start_second)
 			BasicExcelCell* cell = sheet->Cell(2+(hours*4)+(minutes/15),1);
 			CellFormat fmt_bold(fmt_mgr, font_bold);
 			fmt_bold.set_color1(COLOR1_PAT_SOLID);			
-			fmt_bold.set_color2(MAKE_COLOR2(EGA_BLUE,0));
+			fmt_bold.set_color2(MAKE_COLOR2(EGA_RED,0));
 
 			cell->SetFormat(fmt_bold);
 		}
