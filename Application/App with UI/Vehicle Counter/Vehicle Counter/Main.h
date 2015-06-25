@@ -327,6 +327,7 @@ namespace VehicleCounter {
 			// 
 			// button4
 			// 
+			this->button4->Enabled = false;
 			this->button4->Location = System::Drawing::Point(499, 112);
 			this->button4->Margin = System::Windows::Forms::Padding(2);
 			this->button4->Name = L"button4";
@@ -335,7 +336,6 @@ namespace VehicleCounter {
 			this->button4->Text = L"Stop";
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &Main::button4_Click);
-			this->button4->Enabled=false;
 			// 
 			// labelOutputTxt
 			// 
@@ -552,7 +552,6 @@ namespace VehicleCounter {
 			this->MaximizeBox = false;
 			this->Name = L"Main";
 			this->Text = L"Traffic Analyzer";
-			this->Load += gcnew System::EventHandler(this, &Main::Main_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown3))->EndInit();
