@@ -27,12 +27,13 @@ namespace VehicleCounter {
 		Main(void)
 		{
 			impgs= gcnew List<MyClass^>();
+			testing = false;
 			Video_No=0;
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
-			inFileName = "";
+			inFileNames = "";
 			outFileName = "";
 			outFileNameTxt = "";
 		}
@@ -92,6 +93,9 @@ namespace VehicleCounter {
 	private: System::Windows::Forms::Timer^  timer1;
 	private: System::ComponentModel::BackgroundWorker^  backgroundWorker1;
 	private: System::IO::FileSystemWatcher^  fileSystemWatcher1;
+	private: System::Windows::Forms::Button^  button5;
+	private: System::Windows::Forms::FolderBrowserDialog^  folderBrowserDialog1;
+	private: System::Windows::Forms::OpenFileDialog^  openFileDialog2;
 	private: System::ComponentModel::IContainer^  components;
 
 
@@ -138,6 +142,7 @@ namespace VehicleCounter {
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->label11 = (gcnew System::Windows::Forms::Label());
@@ -146,6 +151,8 @@ namespace VehicleCounter {
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
 			this->fileSystemWatcher1 = (gcnew System::IO::FileSystemWatcher());
+			this->folderBrowserDialog1 = (gcnew System::Windows::Forms::FolderBrowserDialog());
+			this->openFileDialog2 = (gcnew System::Windows::Forms::OpenFileDialog());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown3))->BeginInit();
@@ -201,7 +208,7 @@ namespace VehicleCounter {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(521, 38);
+			this->button1->Location = System::Drawing::Point(502, 13);
 			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(66, 23);
@@ -247,7 +254,7 @@ namespace VehicleCounter {
 			// 
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(417, 59);
+			this->button3->Location = System::Drawing::Point(417, 62);
 			this->button3->Margin = System::Windows::Forms::Padding(2);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(148, 33);
@@ -328,6 +335,7 @@ namespace VehicleCounter {
 			this->button4->Text = L"Stop";
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &Main::button4_Click);
+			this->button4->Enabled=false;
 			// 
 			// labelOutputTxt
 			// 
@@ -438,7 +446,9 @@ namespace VehicleCounter {
 			// panel2
 			// 
 			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel2->Controls->Add(this->button5);
 			this->panel2->Controls->Add(this->checkBox2);
+			this->panel2->Controls->Add(this->button1);
 			this->panel2->Controls->Add(this->checkBox1);
 			this->panel2->Controls->Add(this->labelOutputTxt);
 			this->panel2->Controls->Add(this->textBox4);
@@ -452,6 +462,16 @@ namespace VehicleCounter {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(605, 306);
 			this->panel2->TabIndex = 32;
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(502, 51);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(66, 23);
+			this->button5->TabIndex = 26;
+			this->button5->Text = L"Cancel";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &Main::button5_Click);
 			// 
 			// checkBox2
 			// 
@@ -513,6 +533,10 @@ namespace VehicleCounter {
 			this->fileSystemWatcher1->EnableRaisingEvents = true;
 			this->fileSystemWatcher1->SynchronizingObject = this;
 			// 
+			// openFileDialog2
+			// 
+			this->openFileDialog2->FileName = L"openFileDialog2";
+			// 
 			// Main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -520,7 +544,6 @@ namespace VehicleCounter {
 			this->ClientSize = System::Drawing::Size(672, 560);
 			this->Controls->Add(this->label12);
 			this->Controls->Add(this->progressBar1);
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->panel1);
@@ -529,6 +552,7 @@ namespace VehicleCounter {
 			this->MaximizeBox = false;
 			this->Name = L"Main";
 			this->Text = L"Traffic Analyzer";
+			this->Load += gcnew System::EventHandler(this, &Main::Main_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown3))->EndInit();
@@ -544,7 +568,7 @@ namespace VehicleCounter {
 		}
 #pragma endregion
 
-		String^ inFileName;
+		String^ inFileNames;
 		String^ outFileName;
 		String^ outFileNameTxt;
 		int starth;
@@ -552,6 +576,7 @@ namespace VehicleCounter {
 		int starts;
 		int nol;
 		int Video_No;
+		bool testing;
 		ImageProcessor *imgp;
 		ref class MyClass
 		{
@@ -561,6 +586,7 @@ namespace VehicleCounter {
 			bool Marked;
 		};
 		List<MyClass^>^ impgs;
+		List<String^>^ namelist;
 
 		void MergeVideoProperties(int TotalFrames)
 		{
@@ -568,7 +594,7 @@ namespace VehicleCounter {
 							startm+=(TotalFrames/1800)%60;
 							starth+=(TotalFrames/1800)/60;
 							msclr::interop::marshal_context context;
-							impgs[Video_No]->imgpp = new ImageProcessor(context.marshal_as<std::string>(inFileName), context.marshal_as<std::string>(outFileName), context.marshal_as<std::string>(outFileNameTxt), starth, startm, starts, nol);
+							impgs[Video_No]->imgpp = new ImageProcessor(context.marshal_as<std::string>(inFileNames), context.marshal_as<std::string>(outFileName), context.marshal_as<std::string>(outFileNameTxt), starth, startm, starts, nol);
 							impgs[Video_No]->imgpp->w=impgs[Video_No-1]->imgpp->w;
 							impgs[Video_No]->imgpp->h=impgs[Video_No-1]->imgpp->h;
 							impgs[Video_No]->imgpp->x_cord=impgs[Video_No-1]->imgpp->x_cord;
@@ -588,7 +614,7 @@ namespace VehicleCounter {
 
 			
 			
-			if (inFileName->Length == 0)
+			if (inFileNames->Length == 0)
 			{
 				MessageBox::Show("Error!!","",MessageBoxButtons::OK,
 							MessageBoxIcon::Error);
@@ -611,7 +637,7 @@ namespace VehicleCounter {
 		}
 
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-
+				// impgs= gcnew List<MyClass^>();				
 				 textBox1->BackColor = Color::White;
 				 openFileDialog1->Filter = "Video Files|*.MTS";
 				 openFileDialog1->Title = "Select a Video File";
@@ -619,6 +645,7 @@ namespace VehicleCounter {
 				 if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 				 {
 					 String^ _inputFileName = openFileDialog1->FileName;
+					 
 					 if(textBox1->Text=="")
 					 {
 						textBox1->Text = _inputFileName;
@@ -667,8 +694,7 @@ namespace VehicleCounter {
 
 				else
 				{
-					inFileName=impgs[Video_No]->inFileNamee;
-					std::cout<<Video_No;
+					inFileNames=impgs[Video_No]->inFileNamee;
 					if(!Validate())
 						return;
 					if(!impgs[Video_No]->Marked)
@@ -678,6 +704,7 @@ namespace VehicleCounter {
 						return;
 					}
 					timer1->Start();
+					this->button4->Enabled=true;
 					int TotalFrames=impgs[Video_No]->imgpp->Start();
 					impgs[Video_No]->imgpp->saveResults(starth, startm, starts);
 					Video_No++;
@@ -685,17 +712,18 @@ namespace VehicleCounter {
 
 					if(impgs->Count==Video_No)
 					{
-						MessageBox::Show("DONE");
+						MessageBox::Show("            DONE     ");
 						Video_No=0;
 					}
 					else
 					{
 						if(MessageBox::Show("Do you Want To Set Date & Time again?","Message",MessageBoxButtons::YesNo,
-							MessageBoxIcon::Question)==System::Windows::Forms::DialogResult::Yes)
-							return;
+							MessageBoxIcon::Question)==System::Windows::Forms::DialogResult::Yes){
+							this->button4->Enabled=false;return;
+						}
 						else
 						{
-							inFileName=impgs[Video_No]->inFileNamee;
+							inFileNames=impgs[Video_No]->inFileNamee;
 							MergeVideoProperties(TotalFrames);
 							button3_Click(gcnew System::Object, gcnew System::EventArgs);
 						}
@@ -705,10 +733,15 @@ namespace VehicleCounter {
 
 			 }
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
-				 ImageProcessor::isVideoRun = false;
-				 ImageProcessor::proccess_start=false;
-				 impgs[Video_No]->imgpp->saveResults(starth, startm, starts);
-				 timer1->Stop();
+				 if(MessageBox::Show("Do you want to Stop this video?","Message",MessageBoxButtons::YesNo,
+					 MessageBoxIcon::Question)==System::Windows::Forms::DialogResult::Yes){
+					 ImageProcessor::isVideoRun = false;
+					 ImageProcessor::proccess_start=false;
+					 if(!testing)		// save results if not testing
+						impgs[Video_No]->imgpp->saveResults(starth, startm, starts);
+					 timer1->Stop();
+					 this->button4->Enabled=false;
+				}
 			 }
 	private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e)
 			 {
@@ -723,11 +756,68 @@ namespace VehicleCounter {
 					 textBox4->Text = _outputFileName;
 					 outFileNameTxt = _outputFileName;
 				 }
+
+				 /*folderBrowserDialog1->Description = "Select output Files Location";
+				 folderBrowserDialog1->ShowDialog();
+				 if (folderBrowserDialog1->SelectedPath != "")
+				 {
+					 String^ _outputFileName = folderBrowserDialog1->SelectedPath;
+					 textBox4->Text = _outputFileName;
+					 outFileNameTxt = _outputFileName;
+				 }*/
+				
+
 			 }
 	private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
+				if(impgs->Count==0)
+				{
+					textBox1->BackColor = Color::Red;
+					MessageBox::Show("Select A Video(.MTS Format)!!","",MessageBoxButtons::OK,
+									MessageBoxIcon::Error);
+					return;
+				}
+
+				else
+				{
+					inFileNames=impgs[Video_No]->inFileNamee;
+					if(!Validate())
+						return;
+					if(!impgs[Video_No]->Marked)
+					{
+						MessageBox::Show("Mark Lanes!!","",MessageBoxButtons::OK,
+									MessageBoxIcon::Error);
+						return;
+					}
+					timer1->Start();
+					this->button4->Enabled=true;
+					testing = true;
+					impgs[Video_No]->imgpp->Start();
+					testing = false;
+					this->button4->Enabled=false;
+					timer1->Stop();
+
+
+				}
 
 			 }
 	private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
+			outFileNameTxt = textBox4->Text;
+			/*impgs = gcnew List<MyClass^>();
+
+			String^ txt = textBox1->Text;
+			String^ delimStr = "\n\r";
+			array<Char>^ delimiter = delimStr->ToCharArray( );
+			array<String^>^ paths;
+			paths = txt->Split( delimiter );
+			for (int word=0; word<paths->Length; word++){
+				MyClass^ temp=gcnew MyClass;
+				temp->inFileNamee=paths[word] ;
+				if(word<Video_No)
+					temp->Marked=true;
+				else
+					temp->Marked=false;
+				impgs->Add(temp);
+			}*/
 				if(impgs->Count==0)
 				{
 					textBox1->BackColor = Color::Red;
@@ -737,7 +827,7 @@ namespace VehicleCounter {
 				}
 				else
 				{
-					inFileName=impgs[Video_No]->inFileNamee;
+					inFileNames=impgs[Video_No]->inFileNamee;
 					if (!Validate())
 					{
 						return;
@@ -748,7 +838,7 @@ namespace VehicleCounter {
 						return;
 					}
 
-					impgs[Video_No]->imgpp = new ImageProcessor(context.marshal_as<std::string>(inFileName), context.marshal_as<std::string>(outFileName), context.marshal_as<std::string>(outFileNameTxt), starth, startm, starts, nol);
+					impgs[Video_No]->imgpp = new ImageProcessor(context.marshal_as<std::string>(inFileNames), context.marshal_as<std::string>(outFileName), context.marshal_as<std::string>(outFileNameTxt), starth, startm, starts, nol);
 					impgs[Video_No]->Marked=impgs[Video_No]->imgpp->MarkTrackers();
 					
 				}
@@ -781,6 +871,28 @@ private: System::Void label7_Click(System::Object^  sender, System::EventArgs^  
 private: System::Void numericUpDown1_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
 		 }
 private: System::Void textBox4_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
+			if(impgs->Count ==0)
+				return;
+			if(MessageBox::Show("Do you Really Want To Cancel Process?","Message",MessageBoxButtons::YesNo,
+				MessageBoxIcon::Question)==System::Windows::Forms::DialogResult::No)
+				return;
+			Video_No = 0;
+			impgs = gcnew List<MyClass^>();
+
+			String^ txt = textBox1->Text;
+			String^ delimStr = "\n\r";
+			array<Char>^ delimiter = delimStr->ToCharArray( );
+			array<String^>^ paths;
+			paths = txt->Split( delimiter );
+			for (int word=0; word<paths->Length; word++){
+				
+				MyClass^ temp=gcnew MyClass;
+				temp->inFileNamee=paths[word] ;
+				temp->Marked=false;
+				impgs->Add(temp);
+			}
 		 }
 };
 }

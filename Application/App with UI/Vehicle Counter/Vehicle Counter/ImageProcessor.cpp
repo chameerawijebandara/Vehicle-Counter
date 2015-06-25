@@ -184,7 +184,7 @@ int ImageProcessor::Start()
 	}
 	totFrams = cvGetCaptureProperty(cap, CV_CAP_PROP_FRAME_COUNT);
 
-	for (int j = 0; (j<100)&&isVideoRun; j++)	//27000 frames for 15 minutes(Frame rate=30)
+	for (int j = 0; (j<1000)&&isVideoRun; j++)	//27000 frames for 15 minutes(Frame rate=30)
 	{
 
 		currentFrame = cvGetCaptureProperty(cap, CV_CAP_PROP_POS_FRAMES);
