@@ -716,7 +716,7 @@ namespace VehicleCounter {
 					}
 					else
 					{
-						if(MessageBox::Show("Do you Want To Set Date & Time again?","Message",MessageBoxButtons::YesNo,
+						if(MessageBox::Show("Do you Want To Set Date & Time again or Mark Lanes again?","Message",MessageBoxButtons::YesNo,
 							MessageBoxIcon::Question)==System::Windows::Forms::DialogResult::Yes){
 							this->button4->Enabled=false;return;
 						}
@@ -736,7 +736,8 @@ namespace VehicleCounter {
 					 MessageBoxIcon::Question)==System::Windows::Forms::DialogResult::Yes){
 					 ImageProcessor::isVideoRun = false;
 					 ImageProcessor::proccess_start=false;
-					 if(!testing)		// save results if not testing
+					 if(!testing && MessageBox::Show("Do you want to Save results to ecxel file?","Message",MessageBoxButtons::YesNo,
+					 MessageBoxIcon::Question)==System::Windows::Forms::DialogResult::Yes)		// save results if not testing
 						impgs[Video_No]->imgpp->saveResults(starth, startm, starts);
 					 timer1->Stop();
 					 this->button4->Enabled=false;
@@ -847,7 +848,8 @@ namespace VehicleCounter {
 	private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
 				 textBox2->Enabled = !textBox2->Enabled;
 				 button2->Enabled = !button2->Enabled;
-
+				 if(!textBox2->Enabled)
+					 textBox2->BackColor = Color::White;
 				 ImageProcessor::isVideoOut = button2->Enabled;
 			 }
 	private: System::Void checkBox2_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
