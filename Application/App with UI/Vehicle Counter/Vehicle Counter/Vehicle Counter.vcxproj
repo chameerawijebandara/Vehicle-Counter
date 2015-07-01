@@ -89,6 +89,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="wmain .cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BasicExcel.hpp" />
