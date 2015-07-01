@@ -27,7 +27,7 @@
     <ClCompile Include="ExcelFormat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wmain .cpp">
+    <ClCompile Include="WinMain .cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,10 +44,23 @@
     <ClInclude Include="ExcelFormat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Main.resx">
       <Filter>Source Files\Resource Files</Filter>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Vehicle Counter.rc">
+      <Filter>Source Files\Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\icon (1).ico">
+      <Filter>Source Files\Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

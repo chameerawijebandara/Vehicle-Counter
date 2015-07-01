@@ -89,7 +89,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="wmain .cpp" />
+    <ClCompile Include="WinMain .cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BasicExcel.hpp" />
@@ -98,11 +98,18 @@
     <ClInclude Include="Main.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Vehicle Counter.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\icon (1).ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
