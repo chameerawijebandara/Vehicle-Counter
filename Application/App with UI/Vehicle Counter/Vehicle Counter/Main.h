@@ -553,7 +553,7 @@ namespace VehicleCounter {
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->MaximizeBox = false;
 			this->Name = L"Main";
-			this->Text = L"Traffic Analyzer";
+			this->Text = L"Vehicle Counter";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numericUpDown3))->EndInit();
@@ -881,6 +881,8 @@ private: System::Void numericUpDown1_ValueChanged(System::Object^  sender, Syste
 private: System::Void textBox4_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 		 }
 private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
+			progressBar1->Value = 0;
+			timer1->Stop();
 			if(impgs->Count ==0)
 				return;
 			if(MessageBox::Show("Do you Really Want To Cancel Process?","Message",MessageBoxButtons::YesNo,

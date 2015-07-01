@@ -340,7 +340,48 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
-		<row><td>Vehicle_Counter.Primary_Output</td><td>{9CE896CF-E0C3-44F5-BEDB-03758295F797}</td><td>INSTALLDIR</td><td>2</td><td/><td>vehicle_counter.primary_outp</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td>{71C010BC-6E0A-4323-8E18-5237CC96DC0A}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{79DA308A-22AE-4EEB-A2FE-B2691E6A248D}</td><td>NADIMITH_INC.</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{ACEB9F98-0256-4C6E-BDB3-F3A197AA70DC}</td><td>CommonFilesFolder</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT3</td><td>{65FFAD3C-A650-4CB5-9D43-63B18ABB520A}</td><td>AppDataFolder</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Vehicle_Counter.Primary_Output</td><td>{6A4861FA-A100-49E4-A34F-104FFB40FD7C}</td><td>INSTALLDIR</td><td>2</td><td/><td>vehicle_counter.primary_outp</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_calib3d2411.dll</td><td>{C6AC8DC7-2B28-467C-8AAF-54E61433D4D6}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_calib3d2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_calib3d2411d.dll</td><td>{C5C36870-7684-49DA-917F-781DDD7A8F3C}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_calib3d2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_contrib2411.dll</td><td>{4CF59173-7702-4B90-B075-6456B204365E}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_contrib2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_contrib2411d.dll</td><td>{D15853F2-A841-47D2-8F73-59D6D3525C79}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_contrib2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_core2411.dll</td><td>{619F1C00-3A62-448A-A114-32E6F6309DCE}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_core2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_core2411d.dll</td><td>{BC50F182-B256-46FE-BF99-10D5A0D40FF9}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_core2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_features2d2411.dll</td><td>{5581E3A6-CC90-4CAB-8604-0C56A5D431F8}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_features2d2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_features2d2411d.dll</td><td>{908CDB23-41FC-45AC-82C2-864BFB81A405}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_features2d2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_ffmpeg2411.dll</td><td>{D2C51D15-6B6B-44DC-ADED-3AE000B4D062}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_ffmpeg2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_flann2411.dll</td><td>{B8A680FA-5705-458E-8246-832B82F1225C}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_flann2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_flann2411d.dll</td><td>{20694A2C-203E-41AE-8C7C-B4C736EEEF21}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_flann2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_gpu2411.dll</td><td>{5B89C453-C8C4-498E-B57D-1FBD340434AA}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_gpu2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_gpu2411d.dll</td><td>{8763D4DA-1DC1-4ADF-910C-0D1F9EBAD255}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_gpu2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_highgui2411.dll</td><td>{7A031A47-CD63-4FCC-9500-1798057C3C64}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_highgui2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_highgui2411d.dll</td><td>{5E397C03-3302-4B56-B0EF-4FC6E6F2E380}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_highgui2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_imgproc2411.dll</td><td>{2FB292CA-0480-4384-B71C-2B2F8E422F2F}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_imgproc2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_imgproc2411d.dll</td><td>{C6BA7F38-AA0A-456E-8C58-6F5DD32BDF0F}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_imgproc2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_legacy2411.dll</td><td>{FC48657A-BF28-4C26-BA23-531BEC9F7949}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_legacy2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_legacy2411d.dll</td><td>{6B3D117D-E905-41DD-9316-31C076B1FC8B}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_legacy2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_ml2411.dll</td><td>{E2CC115E-87DC-436E-8FD8-ECD02DDE11A6}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_ml2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_ml2411d.dll</td><td>{5B565534-2CCD-46CA-BD4D-FCBD924D8870}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_ml2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_nonfree2411.dll</td><td>{E75FC2F2-F97E-4EC6-BA82-B3B2A0A4B874}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_nonfree2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_nonfree2411d.dll</td><td>{FC7B33BE-E05C-48D6-8E91-B1B14373553C}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_nonfree2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_objdetect2411.dll</td><td>{BA66DFEA-B5FA-487A-BD5B-BE75834CF1C9}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_objdetect2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_objdetect2411d.dll</td><td>{3201DB4D-18F8-4743-821A-AF9777E8E278}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_objdetect2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_ocl2411.dll</td><td>{DE8C47F0-0AC0-49F8-9E05-76788200EE9A}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_ocl2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_ocl2411d.dll</td><td>{37834BB3-0CE7-4A6D-AA54-527904413952}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_ocl2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_photo2411.dll</td><td>{08A162C8-8197-462F-8929-F90C6F7B5D5E}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_photo2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_photo2411d.dll</td><td>{1413BE9D-E67A-4CB7-AE6F-0E8D9F33C897}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_photo2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_stitching2411.dll</td><td>{7E6524DD-AFCE-4183-A4ED-FFB9376208EC}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_stitching2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_stitching2411d.dll</td><td>{9CB28614-191E-4872-BD54-B42F46EC4658}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_stitching2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_superres2411.dll</td><td>{A71FBB64-954E-4C97-BD1C-6EF01D836647}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_superres2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_superres2411d.dll</td><td>{62ECAC0F-A54F-4BFB-B144-C25C8B663543}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_superres2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_video2411.dll</td><td>{71B682FD-1579-489C-9CD4-269E002B3FBF}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_video2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_video2411d.dll</td><td>{A4E9EB35-C80D-4653-89E0-97C8C8AA101B}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_video2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_videostab2411.dll</td><td>{BEC4AC29-7B34-46F4-B726-61A80D909B1C}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_videostab2411.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>opencv_videostab2411d.dll</td><td>{BAB597A4-EEC0-4C46-A8A8-D4B83F97A0D4}</td><td>INSTALLDIR</td><td>2</td><td/><td>opencv_videostab2411d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1049,6 +1090,10 @@
 	<table name="CreateFolder">
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>AppDataFolder</td><td>ISX_DEFAULTCOMPONENT3</td></row>
+		<row><td>CommonFilesFolder</td><td>ISX_DEFAULTCOMPONENT2</td></row>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT</td></row>
+		<row><td>NADIMITH_INC.</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1145,6 +1190,7 @@
 		<row><td>ISYourDataBaseDir</td><td>INSTALLDIR</td><td>Database</td><td/><td>0</td><td/></row>
 		<row><td>LocalAppDataFolder</td><td>TARGETDIR</td><td>.:LocalA~1|LocalAppData</td><td/><td>0</td><td/></row>
 		<row><td>MyPicturesFolder</td><td>TARGETDIR</td><td>.:MyPict~1|MyPictures</td><td/><td>0</td><td/></row>
+		<row><td>NADIMITH_INC</td><td>ProgramFilesFolder</td><td>NADIMI~1|Nadimith Inc</td><td/><td>0</td><td/></row>
 		<row><td>NADIMITH_INC.</td><td>ProgramFilesFolder</td><td>NADIMI~1|Nadimith Inc.</td><td/><td>0</td><td/></row>
 		<row><td>NetHoodFolder</td><td>TARGETDIR</td><td>.:NetHood</td><td/><td>0</td><td/></row>
 		<row><td>PersonalFolder</td><td>TARGETDIR</td><td>.:Personal</td><td/><td>0</td><td/></row>
@@ -1166,12 +1212,14 @@
 		<row><td>TemplateFolder</td><td>TARGETDIR</td><td>.:ShellNew</td><td/><td>0</td><td/></row>
 		<row><td>USERPROFILE</td><td>TARGETDIR</td><td>.:USERPR~1|UserProfile</td><td/><td>0</td><td/></row>
 		<row><td>VEHICLE_COUNTER</td><td>NADIMITH_INC.</td><td>VEHICL~1|Vehicle Counter</td><td/><td>0</td><td/></row>
+		<row><td>VEHICLE_COUNTER1</td><td>NADIMITH_INC</td><td>VEHICL~1|Vehicle Counter</td><td/><td>0</td><td/></row>
 		<row><td>WindowsFolder</td><td>TARGETDIR</td><td>.:Windows</td><td/><td>0</td><td/></row>
 		<row><td>WindowsVolume</td><td>TARGETDIR</td><td>.:WinRoot</td><td/><td>0</td><td/></row>
 		<row><td>c_b</td><td>ProgramMenuFolder</td><td>C&amp;B</td><td/><td>1</td><td/></row>
 		<row><td>nadimi_1_nadimith_inc.</td><td>ProgramMenuFolder</td><td>NADIMI~1|Nadimith Inc.</td><td/><td>1</td><td/></row>
 		<row><td>traffi_1_traffic_analyzer</td><td>c_b</td><td>TRAFFI~1|Traffic Analyzer</td><td/><td>1</td><td/></row>
 		<row><td>traffi_1_traffic_analyzer1</td><td>nadimi_1_nadimith_inc.</td><td>TRAFFI~1|Traffic Analyzer</td><td/><td>1</td><td/></row>
+		<row><td>vehicl_1_vehicle_counter</td><td>nadimi_1_nadimith_inc.</td><td>VEHICL~1|Vehicle Counter</td><td/><td>1</td><td/></row>
 	</table>
 
 	<table name="DrLocator">
@@ -1863,7 +1911,48 @@
 	<table name="FeatureComponents">
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT2</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT3</td></row>
 		<row><td>AlwaysInstall</td><td>Vehicle_Counter.Primary_Output</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_calib3d2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_calib3d2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_contrib2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_contrib2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_core2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_core2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_features2d2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_features2d2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_ffmpeg2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_flann2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_flann2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_gpu2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_gpu2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_highgui2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_highgui2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_imgproc2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_imgproc2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_legacy2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_legacy2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_ml2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_ml2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_nonfree2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_nonfree2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_objdetect2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_objdetect2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_ocl2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_ocl2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_photo2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_photo2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_stitching2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_stitching2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_superres2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_superres2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_video2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_video2411d.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_videostab2411.dll</td></row>
+		<row><td>AlwaysInstall</td><td>opencv_videostab2411d.dll</td></row>
 	</table>
 
 	<table name="File">
@@ -1878,6 +1967,43 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
+		<row><td>opencv_calib3d2411.dll</td><td>opencv_calib3d2411.dll</td><td>OPENCV~1.DLL|opencv_calib3d2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_calib3d2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_calib3d2411d.dll</td><td>opencv_calib3d2411d.dll</td><td>OPENCV~1.DLL|opencv_calib3d2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_calib3d2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_contrib2411.dll</td><td>opencv_contrib2411.dll</td><td>OPENCV~1.DLL|opencv_contrib2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_contrib2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_contrib2411d.dll</td><td>opencv_contrib2411d.dll</td><td>OPENCV~1.DLL|opencv_contrib2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_contrib2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_core2411.dll</td><td>opencv_core2411.dll</td><td>OPENCV~1.DLL|opencv_core2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_core2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_core2411d.dll</td><td>opencv_core2411d.dll</td><td>OPENCV~1.DLL|opencv_core2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_core2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_features2d2411.dll</td><td>opencv_features2d2411.dll</td><td>OPENCV~1.DLL|opencv_features2d2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_features2d2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_features2d2411d.dll</td><td>opencv_features2d2411d.dll</td><td>OPENCV~1.DLL|opencv_features2d2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_features2d2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_ffmpeg2411.dll</td><td>opencv_ffmpeg2411.dll</td><td>OPENCV~1.DLL|opencv_ffmpeg2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_ffmpeg2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_flann2411.dll</td><td>opencv_flann2411.dll</td><td>OPENCV~1.DLL|opencv_flann2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_flann2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_flann2411d.dll</td><td>opencv_flann2411d.dll</td><td>OPENCV~1.DLL|opencv_flann2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_flann2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_gpu2411.dll</td><td>opencv_gpu2411.dll</td><td>OPENCV~1.DLL|opencv_gpu2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_gpu2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_gpu2411d.dll</td><td>opencv_gpu2411d.dll</td><td>OPENCV~1.DLL|opencv_gpu2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_gpu2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_highgui2411.dll</td><td>opencv_highgui2411.dll</td><td>OPENCV~1.DLL|opencv_highgui2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_highgui2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_highgui2411d.dll</td><td>opencv_highgui2411d.dll</td><td>OPENCV~1.DLL|opencv_highgui2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_highgui2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_imgproc2411.dll</td><td>opencv_imgproc2411.dll</td><td>OPENCV~1.DLL|opencv_imgproc2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_imgproc2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_imgproc2411d.dll</td><td>opencv_imgproc2411d.dll</td><td>OPENCV~1.DLL|opencv_imgproc2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_imgproc2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_legacy2411.dll</td><td>opencv_legacy2411.dll</td><td>OPENCV~1.DLL|opencv_legacy2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_legacy2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_legacy2411d.dll</td><td>opencv_legacy2411d.dll</td><td>OPENCV~1.DLL|opencv_legacy2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_legacy2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_ml2411.dll</td><td>opencv_ml2411.dll</td><td>OPENCV~1.DLL|opencv_ml2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_ml2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_ml2411d.dll</td><td>opencv_ml2411d.dll</td><td>OPENCV~1.DLL|opencv_ml2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_ml2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_nonfree2411.dll</td><td>opencv_nonfree2411.dll</td><td>OPENCV~1.DLL|opencv_nonfree2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_nonfree2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_nonfree2411d.dll</td><td>opencv_nonfree2411d.dll</td><td>OPENCV~1.DLL|opencv_nonfree2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_nonfree2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_objdetect2411.dll</td><td>opencv_objdetect2411.dll</td><td>OPENCV~1.DLL|opencv_objdetect2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_objdetect2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_objdetect2411d.dll</td><td>opencv_objdetect2411d.dll</td><td>OPENCV~1.DLL|opencv_objdetect2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_objdetect2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_ocl2411.dll</td><td>opencv_ocl2411.dll</td><td>OPENCV~1.DLL|opencv_ocl2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_ocl2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_ocl2411d.dll</td><td>opencv_ocl2411d.dll</td><td>OPENCV~1.DLL|opencv_ocl2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_ocl2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_photo2411.dll</td><td>opencv_photo2411.dll</td><td>OPENCV~1.DLL|opencv_photo2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_photo2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_photo2411d.dll</td><td>opencv_photo2411d.dll</td><td>OPENCV~1.DLL|opencv_photo2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_photo2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_stitching2411.dll</td><td>opencv_stitching2411.dll</td><td>OPENCV~1.DLL|opencv_stitching2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_stitching2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_stitching2411d.dll</td><td>opencv_stitching2411d.dll</td><td>OPENCV~1.DLL|opencv_stitching2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_stitching2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_superres2411.dll</td><td>opencv_superres2411.dll</td><td>OPENCV~1.DLL|opencv_superres2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_superres2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_superres2411d.dll</td><td>opencv_superres2411d.dll</td><td>OPENCV~1.DLL|opencv_superres2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_superres2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_video2411.dll</td><td>opencv_video2411.dll</td><td>OPENCV~1.DLL|opencv_video2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_video2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_video2411d.dll</td><td>opencv_video2411d.dll</td><td>OPENCV~1.DLL|opencv_video2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_video2411d.dll</td><td>1</td><td/></row>
+		<row><td>opencv_videostab2411.dll</td><td>opencv_videostab2411.dll</td><td>OPENCV~1.DLL|opencv_videostab2411.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_videostab2411.dll</td><td>1</td><td/></row>
+		<row><td>opencv_videostab2411d.dll</td><td>opencv_videostab2411d.dll</td><td>OPENCV~1.DLL|opencv_videostab2411d.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Image_Processing\Project\aaaaa\Application\App with UI\Vehicle Counter\DLL\opencv_videostab2411d.dll</td><td>1</td><td/></row>
 		<row><td>vehicle_counter.primary_outp</td><td>Vehicle_Counter.Primary_Output</td><td>Vehicle Counter.Primary Output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;Vehicle Counter&gt;|Built</td><td>3</td><td/></row>
 	</table>
 
@@ -2022,7 +2148,48 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
-		<row><td>Vehicle_Counter.Primary_Output</td><td/><td/><td>_C2C30FEC_C7E1_4996_9A78_C6FE7A145A2F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_93708AAF_0ED7_459A_B9F8_A238D18B8541_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_61269472_6B3E_48F7_B7F1_5DAE54A8235C_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_85B8287D_27A1_4941_8E63_3CBA00D18482_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT3</td><td/><td/><td>_C4B1DB37_1CBE_4901_8097_E5B9C7309991_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Vehicle_Counter.Primary_Output</td><td/><td/><td>_2F329C0A_8898_4B9F_AF18_EE104E9AC055_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_calib3d2411.dll</td><td/><td/><td>_ED7187D6_BC50_4753_A74F_86B918EDD36D_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_calib3d2411d.dll</td><td/><td/><td>_8493D15C_C996_4C55_BE48_0BDDB9F172FB_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_contrib2411.dll</td><td/><td/><td>_758DA830_66AB_4F07_A6CA_F40E88E65ED5_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_contrib2411d.dll</td><td/><td/><td>_D97FEE50_18A0_43E3_BBB3_787AFFE75ABB_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_core2411.dll</td><td/><td/><td>_CBBC8DE9_4C2A_4E5A_ADEE_E086E2BD1489_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_core2411d.dll</td><td/><td/><td>_C0412A3D_06FF_4A79_B496_FEFE3BC7B9B7_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_features2d2411.dll</td><td/><td/><td>_C2D091F2_9789_4A94_B71B_BE0E18A4D60E_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_features2d2411d.dll</td><td/><td/><td>_06050AC9_2436_40C3_A7E6_FA5E02F00275_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_ffmpeg2411.dll</td><td/><td/><td>_558EE7C0_23E5_4FC6_8AC1_62D59E2B9037_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_flann2411.dll</td><td/><td/><td>_FA6C5204_21A4_4354_97EB_0817DF7D9AFC_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_flann2411d.dll</td><td/><td/><td>_F3093F19_52D0_4157_97D9_457385A1AB68_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_gpu2411.dll</td><td/><td/><td>_0443AE37_5BED_4B5F_BA81_2D0AD133C7CC_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_gpu2411d.dll</td><td/><td/><td>_E6EE32CB_6A58_4567_9D48_3D094E4DA8A5_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_highgui2411.dll</td><td/><td/><td>_4DDCE2E5_0453_42F9_9198_0C1451DFF143_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_highgui2411d.dll</td><td/><td/><td>_C5A06F0D_194C_4CF7_B79A_773728F460A9_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_imgproc2411.dll</td><td/><td/><td>_EE7FF2B5_E34F_4905_961B_B9FA97F8AD1A_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_imgproc2411d.dll</td><td/><td/><td>_9B9C7BDB_16A4_4F47_A332_06AA13DF7550_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_legacy2411.dll</td><td/><td/><td>_35C695C6_4CC7_43E5_9E20_D11289F4DEE1_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_legacy2411d.dll</td><td/><td/><td>_64D56766_E25C_448B_8E9F_81F51C788DC7_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_ml2411.dll</td><td/><td/><td>_55E5C613_5738_43CD_9A45_557C66E91446_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_ml2411d.dll</td><td/><td/><td>_8579F0AB_4D09_438E_98B5_E1A72FC9FC14_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_nonfree2411.dll</td><td/><td/><td>_91EBAAC5_B65B_4DAF_9361_B8775155C331_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_nonfree2411d.dll</td><td/><td/><td>_5FD6C00D_99F3_45B7_B540_0D6E7CAEBE6E_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_objdetect2411.dll</td><td/><td/><td>_30E2154E_44F4_44E1_BEAD_28843A3B32B7_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_objdetect2411d.dll</td><td/><td/><td>_0D06C290_71C8_418D_85E3_C09F8901CDEE_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_ocl2411.dll</td><td/><td/><td>_1D232D59_492B_46AF_A516_D3CBCD493128_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_ocl2411d.dll</td><td/><td/><td>_71A81757_1FA7_4D6A_9FA9_4112A62261F9_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_photo2411.dll</td><td/><td/><td>_457C659B_0E84_4BFB_A963_2A9F9102A9EA_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_photo2411d.dll</td><td/><td/><td>_DE588252_EA98_42BA_AB31_13CB502CFF51_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_stitching2411.dll</td><td/><td/><td>_398DB1CC_92A0_40D4_BFA6_35E11C36C542_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_stitching2411d.dll</td><td/><td/><td>_525CBC64_454B_467A_9ED6_49CCB734973E_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_superres2411.dll</td><td/><td/><td>_2447028B_9475_4AC9_AE73_7446047110E6_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_superres2411d.dll</td><td/><td/><td>_1A5D838C_95E1_406F_98DD_C48D2A4A1C64_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_video2411.dll</td><td/><td/><td>_43BA3BB6_C3A5_47FA_882A_A3A4D40CA420_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_video2411d.dll</td><td/><td/><td>_DDFC2110_68B8_4204_BCAE_CC339239CAE6_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_videostab2411.dll</td><td/><td/><td>_C50D1F2A_4304_4215_AA4F_FD5B3F4A30A8_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>opencv_videostab2411d.dll</td><td/><td/><td>_29D21E58_5C51_4977_A3E0_BD97953C25CD_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -2640,7 +2807,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>Nadimith Inc.</td><td>0</td><td/><td>195259279</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>Nadimith Inc.</td><td>0</td><td/><td>195248151</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>-215785290</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>-215785290</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION40FULL</td><td>1033</td><td>Microsoft .NET Framework 4.0 Full package or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>-215776106</td></row>
@@ -3456,6 +3623,7 @@
 		<row><td>IDS_SETUPEXE_LAUNCH_COND_E</td><td>1033</td><td>This setup was built with an evaluation version of InstallShield and can only be launched from setup.exe.</td><td>0</td><td/><td>-215785290</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td>Launch |Built</td><td>0</td><td/><td>-215786250</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1033</td><td>Vehicle Counter</td><td>0</td><td/><td>195249807</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME3</td><td>1033</td><td>Vehicle Counter</td><td>0</td><td/><td>195280561</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1033</td><td>From the list of servers below, select the database server you would like to target.</td><td>0</td><td/><td>-215785290</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1033</td><td>From the list of catalog names below, select the database catalog you would like to target.</td><td>0</td><td/><td>-215785290</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1033</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>-215785290</td></row>
@@ -3744,10 +3912,11 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>-215785290</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>-215785290</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>-215785290</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.nadimith.com</td><td>0</td><td/><td>195287951</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>Nadimith Inc.</td><td>0</td><td/><td>195259279</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>http://www.NadimithInc..com</td><td>0</td><td/><td>195248151</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>Nadimith Inc.</td><td>0</td><td/><td>195248151</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>Launch |Built</td><td>0</td><td/><td>-215776010</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>Launch |Built</td><td>0</td><td/><td>195278383</td></row>
+		<row><td>ID_STRING5</td><td>1033</td><td>Vehicle Counter</td><td>0</td><td/><td>195286705</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-215785290</td></row>
 	</table>
 
@@ -4441,9 +4610,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
-		<row><td>FileKey1</td><td>Vehicle_Counter.Primary_Output</td><td/><td>nadimi_1_nadimith_inc.</td><td>2</td></row>
-		<row><td>FileKey2</td><td>Vehicle_Counter.Primary_Output</td><td/><td>traffi_1_traffic_analyzer1</td><td>2</td></row>
-		<row><td>_Built</td><td>Vehicle_Counter.Primary_Output</td><td/><td>traffi_1_traffic_analyzer1</td><td>2</td></row>
+		<row><td>FileKey1</td><td>Vehicle_Counter.Primary_Output</td><td/><td>vehicl_1_vehicle_counter</td><td>2</td></row>
+		<row><td>_Built</td><td>Vehicle_Counter.Primary_Output</td><td/><td>vehicl_1_vehicle_counter</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4529,8 +4697,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>_Built</td><td>traffi_1_traffic_analyzer1</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>Vehicle_Counter.Primary_Output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>_Built1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>Vehicle_Counter.Primary_Output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>_Built</td><td>vehicl_1_vehicle_counter</td><td>##IDS_SHORTCUT_DISPLAY_NAME3##</td><td>Vehicle_Counter.Primary_Output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>_Built1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME3##</td><td>Vehicle_Counter.Primary_Output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
